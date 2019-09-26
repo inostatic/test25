@@ -10,8 +10,8 @@ class Router {
     }
     
     private function getURI() {
-        if(!empty($_SERVER['URI'])) {
-            return trim($_SERVER['URI'], '/');
+        if(!empty($_SERVER['REQUEST_URI'])) {
+            return trim($_SERVER['REQUEST_URI'], '/');
         }
     }
     
@@ -30,6 +30,9 @@ class Router {
                //определим какой контроллер и метод нам нужен
                $controllerName = ucfirst(array_shift($segments))."Controller";
                $methodName = 'method'.ucfirst(array_shift($segments));
+               //Последний элемент массива(если он существует)
+               // является индексом нужной статьи
+               $params = $segments;
                //Узнаем путь к файлу с нужным контроллером
                $controllerFile = ROOT.'/controllers/'.$controllerName.'.php';
                //если такой файл такому пути существует
@@ -39,7 +42,10 @@ class Router {
                }
                //Создаем объект, вызываем метод
                $controllerObject = new $controllerName;
-               $controllerObject->$methodName();
+               $result = call_user_func_array(array($controllerObject, $methodName), $params);
+               if($result != null) {
+                   break;
+               }
                
            }
        }
