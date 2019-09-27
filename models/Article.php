@@ -1,7 +1,7 @@
 <?php
 
 class Article {
-    public function getArticleItemById($id) {
+    public static function getArticleItemById($id) {
         //Обрезаем если число не целое
         $id = intval($id);
         //Подключаем PDO параметры уже внутри
@@ -15,16 +15,17 @@ class Article {
     }
     
     
-    public function getArticleList(){
+    public static function getArticleList(){
         //Подключаем PDO параметры уже внутри
         $db = Db::getConnection();
         
         $articleList = [];
         $result = $db->query('SELECT id, title, date, short_content, author_name '
-				. 'FROM news '
+				. 'FROM article '
 				. 'ORDER BY date DESC '
 				. 'LIMIT 10');
-				
+        
+			
         $i = 0;
         while($row = $result->fetch()) {
                 $articleList[$i]['id'] = $row['id'];

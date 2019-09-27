@@ -17,5 +17,8 @@ class ArticleController {
     
      public function methodIndex() {
         $articleList = Article::getArticleList();
+        echo '<pre>';
+        print_r($articleList);
+        echo '</pre>';
     }
 }
