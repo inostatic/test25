@@ -6,7 +6,7 @@ include_once ROOT.'/models/Article.php';
 class ArticleController {
        
     
-    public function methodConcrete($id) {
+    public function methodSingle($id) {
         $articleItem = Article::getArticleItemById($id);
         
         echo '<pre>';
