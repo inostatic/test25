@@ -1,0 +1,61 @@
+.perents {
+	margin: 0;
+	padding: 0;
+	background: white;
+	font-family: "comic sans ms", Georgia, Serif;
+	font-size: 13px;
+	color: black;
+}
+
+#wrapper {
+        width: 900px;
+        height: 230px;
+       
+	margin: 10px auto; /* отступы между div*/ 
+	padding: 7px;
+        border-style: double;
+	background: activecaption;
+	text-align: justify;
+        color: black;
+}
+
+#full {
+        width: 1000px;
+        height: 1200px;
+	margin: 0px auto;
+	padding: 10px;
+	background: white;
+	text-align: justify;
+}
+
+.date{
+        float: right;
+        text-align: right;
+        color: red;
+        font-family: Verdana;
+}
+.name{
+	font-size: 12pt;
+        color: red;
+}
+.src{
+        width: 100%;
+         float: right;
+        text-align: right;
+}
+
+h1 {
+	font-size: 40px;
+	text-align: center;
+	color: brown;
+	font-family: Verdana;
+}
+
+h3 {
+        font-size: 17px;
+        font-family: Verdana;
+   
+}
+p {
+         text-indent: 30px;
+}
