@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <h1>Blogarticle</h1>
+            <h1>My First Blog</h1>
 	</header>
         <div class="perents">
             <div id="full">
