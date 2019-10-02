@@ -23,7 +23,7 @@ class Article {
         $result = $db->query('SELECT id, title, date, short_content, author_name '
 				. 'FROM article '
 				. 'ORDER BY date DESC '
-				. 'LIMIT 10');
+				. 'LIMIT 5');
         
 			
         $i = 0;

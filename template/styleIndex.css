@@ -1,31 +1,61 @@
-.perents {
-	margin: 0;
-	padding: 0;
-	background: white;
-	font-family: "comic sans ms", Georgia, Serif;
-	font-size: 13px;
-	color: black;
+body {
+    background: #efefef;
 }
-
-#wrapper {
-        width: 900px;
-        height: 230px;
-       
-	margin: 10px auto; /* отступы между div*/ 
-	padding: 7px;
-        border-style: double;
-	background: activecaption;
-	text-align: justify;
-        color: black;
+#container {
+    /*ширина*/
+    width: 1500px;
+    /*поля auto автоматически 0 полей нет*/
+    margin: 0 auto;   
+    /*Border - граница блока.solid - сплошная линия;#CCCCCC - цвет линии;1px - ее толщина в пикселях.*/
+    border: solid #efefef 12px;
 }
-
-#full {
-        width: 1000px;
-        height: 1200px;
-	margin: 0px auto;
-	padding: 10px;
-	background: white;
-	text-align: justify;
+#header {
+    height: 200px;
+    width: 1500px;
+    background-color: #efefef;
+    margin: 10px auto;
+}
+#leftside {
+    /*цвет фона*/
+    background-color: #efefef;
+    /*высота*/
+    height: 1250px;
+    /*ширина*/
+    width: 250px;
+    float: left;
+    margin-left: 30px;
+    
+}
+#rightside {
+    background-color: #efefef;
+    /*background-color: antiquewhite;*/
+    height: 1250px;
+    width: 250px;
+    float: right;
+    margin-right: 30px;
+    
+}
+#content {
+    /*background-color: #CCFFCC;*/
+    height: 230px;
+    width: 900px;
+    float: left;
+    margin-left: 10px ;
+    padding: 7px;
+    border-style: double;
+    background: #fff;
+    /*background: activecaption;*/
+    text-align: justify;
+    color: black;
+    /*margin: 5px auto;*/
+}
+#footer {
+    height: 200px;
+    width: 1500px;
+    background-color: #efefef;
+    margin: 10px auto;
+     clear: both; 
+   
 }
 
 .date{
@@ -33,10 +63,13 @@
         text-align: right;
         color: red;
         font-family: Verdana;
+        font-weight: bold;
+        font-size: 11pt;
 }
 .name{
-	font-size: 12pt;
+	font-size: 14pt;
         color: red;
+        font-weight: bold;
 }
 .src{
         width: 100%;
@@ -47,15 +80,25 @@
 h1 {
 	font-size: 40px;
 	text-align: center;
-	color: brown;
+	color: Navy;
 	font-family: Verdana;
 }
 
 h3 {
         font-size: 17px;
         font-family: Verdana;
+        color: Indigo;
    
 }
 p {
          text-indent: 30px;
+}
+.p {
+    /*выравнивание текста по центру*/
+    text-align: center;
+    /*размер шрифта*/
+    font-size: 24px;
+    /*жирный текст*/
+    font-weight: bold;
+    color: MidnightBlue;
 }
