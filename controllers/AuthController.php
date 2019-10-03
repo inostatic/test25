@@ -3,8 +3,10 @@
 class AuthController {
    
     
-    public function methodRegister() {
-         include_once ROOT.'/models/Register.php';
+    public function methodRegistration() {
+         include_once ROOT.'/models/Registration.php';
+         Registration::regist();
+
     }
     
      public function methodLogin() {
