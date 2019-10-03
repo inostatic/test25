@@ -9,52 +9,99 @@ body {
     /*Border - граница блока.solid - сплошная линия;#CCCCCC - цвет линии;1px - ее толщина в пикселях.*/
     border: solid #efefef 12px;
 }
+
+/*шапка*/
 #header {
     height: 200px;
     width: 1500px;
-    background-color: #efefef;
+    background-color: Pink;
     margin: 10px auto;
 }
+#title {
+    height: 200px;
+    width: 1300px;
+    float: left;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+#form {
+    height: 200px;
+    width: 200px;
+    float: right;
+    background: Pink;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #leftside {
     /*цвет фона*/
-    background-color: #efefef;
+    background-color: Pink;
     /*высота*/
     height: 1250px;
     /*ширина*/
     width: 250px;
     float: left;
-    margin-left: 30px;
+    /*margin-left: 2px;*/
+     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
     
 }
 #rightside {
-    background-color: #efefef;
+    background-color: Pink;
     /*background-color: antiquewhite;*/
     height: 1250px;
     width: 250px;
     float: right;
-    margin-right: 30px;
+    /*margin-right: 10px;*/
+     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
     
 }
 #content {
     /*background-color: #CCFFCC;*/
     height: 230px;
-    width: 900px;
+    width: 950px;
     float: left;
-    margin-left: 10px ;
+    margin-left: 15px ;
     padding: 7px;
     border-style: double;
     background: #fff;
-    /*background: activecaption;*/
+    background: activecaption;
     text-align: justify;
     color: black;
     /*margin: 5px auto;*/
+/*    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    border: solid #efefef 5px;*/
+/*    box-sizing:border-box;*/
 }
 #footer {
     height: 200px;
     width: 1500px;
-    background-color: #efefef;
+    background-color: Pink;
     margin: 10px auto;
      clear: both; 
+     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    /*border: solid #efefef 5px;*/
    
 }
 

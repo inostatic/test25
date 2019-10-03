@@ -9,12 +9,16 @@
     <body>
         <div id ="container">
             <div id ="header">
-                <h1>My First Blog</h1>
-                <form class="form1">
-                    <input type="text">
-                    <input type="text">
-                    <input type="submit">
-                </form>
+                <div id="title">
+                    <h1>My First Blog</h1>
+                </div>
+                <div id="form">
+                    
+                    <?php if(!isset($_SESSION['session_username'])) {
+                                require_once('form/formLogin.php');}
+                          else {require_once('form/formEntered.php');}?>
+                    
+                </div>
             </div>
             <div id ="leftside">
                 <p class="p">Левая колонка</p>
