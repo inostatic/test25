@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?asd=521111">
+        <link rel="stylesheet" href="../template/styleIndex.css?asd=5241111">
     </head>
     <body>
         <div id ="container">
             <div id ="header">
                 <div id="title">
-                    <h1>My First Blog</h1>
+                    <h1>Редактор статей</h1>
                 </div>
                 <div id="form">
 
@@ -30,18 +29,22 @@
             <div id ="rightside">
                 <p class="p">Правая колонка</p>
             </div>
-            <?php foreach ($articleList as $article) { ?>
-                <div id="content">
-                    <h3><?php echo $article['title']; ?></h3>
-                    <span class="name">Автор: <?php echo $article['author_name']; ?></span>
-                    <span class="date"><?php echo $article['date']; ?></span>
-                    <p><?php echo $article['short_content']; ?></p><br>
-                    <span class="src"><a href="http://test25/article/<?php echo $article['id'] ?>">Читать полностью</a></span>
-                </div>
-            <?php } ?>
+            <div>
+                <table>
+                    <tr>
+                        <th width="700px">Название статьи</th>
+                        <th>Изменить</th>
+                        <th>Удалить</th>
+                    </tr>
+
+                </table>
+            </div>
+
             <div id ="footer">
                 <p class="p">FOOTER<p>
             </div>
         </div>
     </body>
 </html>
+
+

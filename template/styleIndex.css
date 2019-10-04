@@ -34,14 +34,49 @@ body {
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
+.menu {
+    font-size: 12pt;
+    text-align: center;
+    font-family: Verdana;
+    font-weight: bold;
+    color: brown;
+}
+a {
+    text-decoration: none;  
+    color: brown;
+}
+a:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: red; /* Ссылка красного цвета */ 
+}
 
 
 
 
 
+table {
+    width: 950px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+    float: left;
+    margin-left: 25px ;
+}
 
-
-
+th {
+    border-bottom: 3px solid #B9B29F;
+    padding: 10px;
+    text-align: left;
+}
+td {
+    padding: 10px;
+}
+tr:nth-child(odd) {
+    background: white;
+}
+tr:nth-child(even) {
+    background: #E8E6D1;
+}
 
 
 
@@ -56,10 +91,10 @@ body {
     width: 250px;
     float: left;
     /*margin-left: 2px;*/
-     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    
+
 }
 #rightside {
     background-color: Pink;
@@ -68,10 +103,10 @@ body {
     width: 250px;
     float: right;
     /*margin-right: 10px;*/
-     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    
+
 }
 #content {
     /*background-color: #CCFFCC;*/
@@ -86,59 +121,59 @@ body {
     text-align: justify;
     color: black;
     /*margin: 5px auto;*/
-/*    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    border: solid #efefef 5px;*/
-/*    box-sizing:border-box;*/
+    /*    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+        box-shadow: 0 1px 3px rgba(0,0,0,.13);
+        border: solid #efefef 5px;*/
+    /*    box-sizing:border-box;*/
 }
 #footer {
     height: 200px;
     width: 1500px;
     background-color: Pink;
     margin: 10px auto;
-     clear: both; 
-     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    clear: both; 
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
     /*border: solid #efefef 5px;*/
-   
+
 }
 
 .date{
-        float: right;
-        text-align: right;
-        color: red;
-        font-family: Verdana;
-        font-weight: bold;
-        font-size: 11pt;
+    float: right;
+    text-align: right;
+    color: red;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 11pt;
 }
 .name{
-	font-size: 14pt;
-        color: red;
-        font-weight: bold;
+    font-size: 14pt;
+    color: red;
+    font-weight: bold;
 }
 .src{
-        width: 100%;
-         float: right;
-        text-align: right;
+    width: 100%;
+    float: right;
+    text-align: right;
 }
 
 h1 {
-	font-size: 40px;
-	text-align: center;
-	color: Navy;
-	font-family: Verdana;
+    font-size: 40px;
+    text-align: center;
+    color: Navy;
+    font-family: Verdana;
 }
 
 h3 {
-        font-size: 17px;
-        font-family: Verdana;
-        color: Indigo;
-   
+    font-size: 17px;
+    font-family: Verdana;
+    color: Indigo;
+
 }
 p {
-         text-indent: 30px;
+    text-indent: 30px;
 }
 .p {
     /*выравнивание текста по центру*/
