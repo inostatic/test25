@@ -36,6 +36,13 @@
                         <th>Изменить</th>
                         <th>Удалить</th>
                     </tr>
+                    <?php if(!empty($articleList)) { foreach($articleList as $title) { ?>
+                    <tr>
+                        <td><?php echo $title['title']; ?></td>
+                        <td>Изменить</td>
+                        <td>Удалить</td>
+                    </tr>
+                    <?php }} ?>
 
                 </table>
             </div>

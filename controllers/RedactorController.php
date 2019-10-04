@@ -4,7 +4,8 @@ class RedactorController {
 
     public function methodArticles() {
         include_once ROOT . '/models/Articles.php';
-        Articles::getArticles();
+       $articleList = Articles::getArticles();
+       include_once ROOT . '/views/ArticlesView.php';
     }
 
 }
