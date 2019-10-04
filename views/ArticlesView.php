@@ -24,10 +24,10 @@
                 </div>
             </div>
             <div id ="leftside">
-                <p class="p">Левая колонка</p>
+                <p class="p"></p>
             </div>
             <div id ="rightside">
-                <p class="p">Правая колонка</p>
+                <p class="p"></p>
             </div>
             <div>
                 <table>

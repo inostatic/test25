@@ -1,56 +1,79 @@
 body {
-    background: #efefef;
+    background: FireBrick;
 }
 #container {
-    /*ширина*/
     width: 1500px;
-    /*поля auto автоматически 0 полей нет*/
     margin: 0 auto;   
-    /*Border - граница блока.solid - сплошная линия;#CCCCCC - цвет линии;1px - ее толщина в пикселях.*/
-    border: solid #efefef 12px;
+    border: solid #efefef 0px;
+    
 }
 
 /*шапка*/
 #header {
     height: 200px;
     width: 1500px;
-    background-color: Pink;
+    background-color: Maroon;
     margin: 10px auto;
+    border-radius: 10px;
 }
 #title {
     height: 200px;
     width: 1300px;
     float: left;
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
 #form {
     height: 200px;
     width: 200px;
     float: right;
-    background: Pink;
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    background: Maroon;
+    border-radius: 10px;
 }
 .menu {
     font-size: 12pt;
-    text-align: center;
-    font-family: Verdana;
+    text-align: left;
+    font-family: stylus bt;
     font-weight: bold;
-    color: brown;
+    color: AntiqueWhite;
+    text-indent: 0px;
+}
+.a {
+    text-decoration: none;  
+    color: AntiqueWhite;
+}
+.a:hover {
+    text-decoration: underline;
+    color: Yellow;
+}
+.pForm {
+    color: #efefef;
+    text-align: left;
+    text-indent: 0px;
+    font-family: COMIC SANS MS;
+}
+.fForm {
+    border-radius: 7px;
+    font-family: times new roman;
+    width: 190px;
+    height: 17px;
+}
+.bForm {
+   height: 30px;
+   width: 95px;
+   margin-top: 5px;
+   border-radius: 7px;
+   background: Crimson;
+   color: #efefef;
+   font-weight: bold;
+   font-family: COMIC SANS MS;
+   
+   
+    
 }
 a {
-    text-decoration: none;  
-    color: brown;
+     text-decoration: none;
+     color: #efefef;
+    
 }
-a:hover {
-    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
-    color: red; /* Ссылка красного цвета */ 
-}
-
-
 
 
 
@@ -83,61 +106,37 @@ tr:nth-child(even) {
 
 
 #leftside {
-    /*цвет фона*/
-    background-color: Pink;
-    /*высота*/
+    background-color: FireBrick;
     height: 1250px;
-    /*ширина*/
     width: 250px;
     float: left;
-    /*margin-left: 2px;*/
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    box-shadow: 0 1px 3px rgba(0,0,0,.13);
 
 }
 #rightside {
-    background-color: Pink;
-    /*background-color: antiquewhite;*/
+    background-color: FireBrick;
     height: 1250px;
     width: 250px;
     float: right;
-    /*margin-right: 10px;*/
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    box-shadow: 0 1px 3px rgba(0,0,0,.13);
 
 }
 #content {
-    /*background-color: #CCFFCC;*/
     height: 230px;
     width: 950px;
     float: left;
     margin-left: 15px ;
     padding: 7px;
     border-style: double;
-    background: #fff;
-    background: activecaption;
+    background: #efefef;
     text-align: justify;
     color: black;
-    /*margin: 5px auto;*/
-    /*    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-        -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-        box-shadow: 0 1px 3px rgba(0,0,0,.13);
-        border: solid #efefef 5px;*/
-    /*    box-sizing:border-box;*/
+    border-radius: 10px;
 }
 #footer {
     height: 200px;
-    width: 1500px;
-    background-color: Pink;
-    margin: 10px auto;
+    width: 100%;
+    background-color: Maroon;
     clear: both; 
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    /*border: solid #efefef 5px;*/
-
+    border-radius: 10px;
 }
 
 .date{
@@ -162,25 +161,27 @@ tr:nth-child(even) {
 h1 {
     font-size: 40px;
     text-align: center;
-    color: Navy;
-    font-family: Verdana;
+    color: AntiqueWhite;
+    font-family: SEGOE PRINT;
 }
 
 h3 {
     font-size: 17px;
-    font-family: Verdana;
+    font-family: COMIC SANS MS;
     color: Indigo;
 
 }
 p {
     text-indent: 30px;
+    font-family: commercialscript bt;
 }
 .p {
+    font-family: COMIC SANS MS;
     /*выравнивание текста по центру*/
     text-align: center;
     /*размер шрифта*/
     font-size: 24px;
     /*жирный текст*/
     font-weight: bold;
-    color: MidnightBlue;
+    color: #efefef;
 }

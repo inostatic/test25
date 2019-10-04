@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?asd=521111">
+        <link rel="stylesheet" href="../template/styleIndex.css?asd=52111111">
     </head>
     <body>
         <div id ="container">
@@ -25,10 +25,10 @@
                 </div>
             </div>
             <div id ="leftside">
-                <p class="p">Левая колонка</p>
+                <p class="p"></p>
             </div>
             <div id ="rightside">
-                <p class="p">Правая колонка</p>
+                <p class="p"></p>
             </div>
             <?php foreach ($articleList as $article) { ?>
                 <div id="content">
