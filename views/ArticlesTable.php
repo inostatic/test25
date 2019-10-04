@@ -43,6 +43,9 @@
                         <td>Удалить</td>
                     </tr>
                     <?php }} ?>
+                    <tr>
+                        <td colspan="3" align="right"><a href="http://test25/myarticles/add">Добавить новую статью</a></td>
+                    </tr>
 
                 </table>
             </div>

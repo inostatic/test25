@@ -23,8 +23,7 @@ Class Registration {
                     $message = 'Пользователь с таким e-mail уже существует!';
                 }
             } else {
-//                $message = 'Заполните все поля!';
-                var_dump($_POST);
+                $message = 'Заполните все поля!';
             }
         }
         if (!empty($message)) {

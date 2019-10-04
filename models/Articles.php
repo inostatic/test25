@@ -10,7 +10,7 @@ class Articles {
         $result = $db->query('SELECT title, date '
                 . 'FROM article WHERE author_id = '.$id
                 . ' ORDER BY date DESC '
-                . 'LIMIT 5');
+                . 'LIMIT 20');
 
         if($result != NULL) {
         $i = 0;
