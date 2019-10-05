@@ -36,6 +36,7 @@
                     <p class='title'><label>Содержание статьи:</label></p>
                     <textarea class='textarea' name='content'></textarea>
                     <input type='submit' name='add' class='subAdd'>
+                    <button type="submit" class="subAdd" name="submit"><a class="bRed" href="http://test25/myarticles">Отмена</a></button>
                 </form>
             </div>
 
