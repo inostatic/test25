@@ -26,10 +26,8 @@ Class Registration {
                 $message = 'Заполните все поля!';
             }
         }
-        if (!empty($message)) {
-            echo "<p class=\"error\">" . "MESSAGE: " . $message . "</p>";
-        }
-        include_once ROOT . '/views/Register.php';
+        
+        
     }
 
 }

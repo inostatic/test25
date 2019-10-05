@@ -208,7 +208,7 @@ tr:nth-child(even) {
 }
 .titleForm {
     background: url(images/line.png);
-    width: 690px;
+    width: 670px;
     height: 26px;
     border-radius: 10px;
     font: normal 14px verdana;
@@ -217,12 +217,12 @@ tr:nth-child(even) {
 }
 .textarea {
     background: url(images/line.png) repeat-y;
-    width: 690px;
+    width: 670px;
     height: 550px;
     border-radius: 10px;
     border: solid 1px #ddd;
-    /*font-family: verdana;*/
-    /*font-size: 14pt;*/
+    font-family: verdana;
+    font-size: 14pt;
     resize: none;
     font: normal 14px verdana;
     line-height: 25px;
@@ -242,10 +242,40 @@ tr:nth-child(even) {
     font-family: COMIC SANS MS;
 }
 
+/*ChangeArticle.php*/
+.bRed {
+    margin-left: 15px;
+    color: #efefef;
+}
 
+/*Register.php*/
+#regist {
+    width: 950px;
+    float: left;
 
+}
 
+.input {
+    font: normal 14px COMIC SANS MS;
+    margin-left: 200px;
+    border-radius: 5px;
+    width: 300px;
 
+}
+.fName {
+    margin-left: 170px;
+    font: normal 16px COMIC SANS MS;
+    color: #efefef;
+}
+#bReg {
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 7px;
+    background: Crimson;
+    color: #efefef;
+    font-weight: bold;
+    font-family: COMIC SANS MS;
+}
 
 
 
@@ -259,7 +289,7 @@ tr:nth-child(even) {
 /*ЛЕВАЯ ОБЛАСТЬ*/
 #leftside {
     /*background-color: white;*/
-    /*background-color: FireBrick;*/
+    background-color: FireBrick;
     height: 1250px;
     width: 250px;
     float: left;
@@ -268,7 +298,7 @@ tr:nth-child(even) {
 /*ПРАВАЯ ОБЛАСТЬ*/
 #rightside {
     /*background-color: white;*/
-    /*background-color: FireBrick;*/
+    background-color: FireBrick;
     height: 1250px;
     width: 250px;
     float: right;

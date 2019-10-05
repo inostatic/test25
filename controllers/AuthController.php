@@ -5,6 +5,7 @@ class AuthController {
     public function methodRegistration() {
         include_once ROOT . '/models/Registration.php';
         Registration::regist();
+        include_once ROOT . '/views/Register.php';
     }
 
     public function methodLogin() {

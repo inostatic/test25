@@ -16,27 +16,10 @@ class Add {
                 if ($result != NULL) {
                     header('Location: http://test25/myarticles');
                     exit();
-                } else {
-                    var_dump($result);
-                    echo '<br>';
-                    var_dump($title);
-                    echo "<br>";
-                    var_dump($content);
-                    echo "<br>";
-                    var_dump($author_id);
-                    echo "<br>";
-                    var_dump($author_name);
-                    echo "<br>";
-                    var_dump($short_content);
-                    
-                    
-                }
+                } 
             } else {
-//                $messege = 'Заполните все поля';
-                echo 'empty';
+                $messege = 'Заполните все поля';
             }
-        } else {
-            echo 'isset';
         }
     }
 

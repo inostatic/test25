@@ -6,6 +6,7 @@ return array(
     "myarticles" => "redactor/articles",
     "myarticles/add" => "redactor/add",
     "myarticles/delete/([0-9]+)" => "redactor/delete/$1",
+    "change/([0-9]+)" => "redactor/change/$1",
     "login" => "auth/login",
     "register" => "auth/registration"
 );

@@ -18,4 +18,9 @@ class RedactorController {
         include_once ROOT . '/models/Delete.php';
         Delete::deleteArticle($id);
     }
+    public function methodChange($id) {
+        include_once ROOT . '/models/Change.php';
+        $article = Change::changeArticle($id);
+        include_once ROOT . '/views/ChangeArticle.php';
+    }
 }

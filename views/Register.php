@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Регистрация</title>
-        <link href="../template/styleRegistration.css" media="screen" rel="stylesheet">
-    </head> 
+        <meta charset="utf8">
+        <title>blog</title>
+        <link rel="stylesheet" href="../template/styleIndex.css?a=111">
+    </head>
     <body>
-        <div class="container mregister">
-            <div id="login">
-                <h1>Регистрация</h1>
-                <form action="" id="registerform" method="post"name="registerform">
-                    <p><label for="user_login">Полное имя<br>
-                            <input class="input" id="full_name" name="full_name"size="32"  type="text" value=""></label></p>
-                    <p><label for="user_pass">E-mail<br>
-                            <input class="input" id="email" name="email" size="32"type="email" value=""></label></p>
-                    <p><label for="user_pass">Имя пользователя<br>
-                            <input class="input" id="username" name="username"size="20" type="text" value=""></label></p>
-                    <p><label for="user_pass">Пароль<br>
-                            <input class="input" id="password" name="password"size="32"   type="password" value=""></label></p>
-                    <p class="submit"><input class="button" id="register" name= "register" type="submit" value="Зарегистрироваться"></p>
-                    <p class="regtext">Уже зарегистрированы? <a href= "http://test25">Назад</a></p>
+        <div id ="container">
+            <div id ="header">
+                <div id="title">
+                    <h1>My First Blog</h1>
+                </div>
+                <div id="form">
+                </div>
+            </div>
+            <div id ="leftside">
+                <p class="p"></p>
+            </div>
+            <div id ="rightside">
+                <p class="p"></p>
+            </div>
+            <div id="regist">
+                <form action="" method="POST">
+                    <p class="fName" ><label>Полное имя</label></p>
+                    <input class="input" name="full_name" type="text">
+                    <p class="fName"><label>E-mail</label></p>
+                    <input class="input" name="email" type="email">
+                    <p class="fName"><label>Имя пользователя</label></p>
+                    <input class="input" name="username"type="text">
+                    <p class="fName"><label>Пароль</label></p>
+                    <input class="input"name="password"type="password">
+                    <p class="fName"><input name= "register" id="bReg" type="submit" value="Зарегистрироваться"></p>
+                    <p class="fName">Уже зарегистрированы? <a href= "http://test25">Назад</a></p>
                 </form>
+                <?php if (!empty($message)) { echo "<p class='fName'>" . "Сообщение: " . $message . "</p>";} ?>
+            </div>
+            <div id ="footer">
+                <p class="p">FOOTER<p>
             </div>
         </div>
-        <footer>
-        </footer>
     </body>
 </html>
+

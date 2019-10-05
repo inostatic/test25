@@ -39,7 +39,7 @@
                     <?php if(!empty($articleList)) { foreach($articleList as $title) { ?>
                     <tr>
                         <td><?php echo $title['title']; ?></td>
-                        <td>Изменить</td>
+                        <td><a href="http://test25/change/<?php echo $title['id'];?>">Изменить</td>
                         <td><a href="http://test25/myarticles/delete/<?php echo $title['id'];?>">Удалить</a></td>
                     </tr>
                     <?php }} ?>
