@@ -13,5 +13,9 @@ class RedactorController {
         Add::addArticle();        
         include_once ROOT . '/views/AddArticle.php';
     }
-
+    
+    public function methodDelete($id) {
+        include_once ROOT . '/models/Delete.php';
+        Delete::deleteArticle($id);
+    }
 }

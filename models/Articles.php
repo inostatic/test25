@@ -7,7 +7,7 @@ class Articles {
          $db = Db::getConnection();
          $id = $_SESSION['session_username']['id'];
         $articleList = [];
-        $result = $db->query('SELECT title, date '
+        $result = $db->query('SELECT title, date, id '
                 . 'FROM article WHERE author_id = '.$id
                 . ' ORDER BY date DESC '
                 . 'LIMIT 20');
@@ -17,6 +17,7 @@ class Articles {
         while ($row = $result->fetch()) {
             
             $articleList[$i]['title'] = $row['title'];
+            $articleList[$i]['id'] = $row['id'];
            
             $i++;
         }

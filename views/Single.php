@@ -4,28 +4,43 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleSingle.css?asd=4">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=12">
     </head>
     <body>
-        <header>
-            <h1>My First Blog</h1>
-        </header>
-        <div class="perents">
-            <div id="full">
-                <div id="wrapper">
-                    <div>
-                        <h3><?php echo $articleItem['title']; ?></h3>
-                        <span class="name">Автор: <?php echo $articleItem['author_name']; ?></span>
-                        <span class="date"><?php echo $articleItem['date']; ?></span>
-                        <p><?php echo $articleItem['content']; ?></p><br>
-                        <span class="src"><a href="http://test25/">Назад</a></span>
-                    </div>
-                </div> 
+        <div id ="container">
+            <div id ="header">
+                <div id="title">
+                    <h1>My First Blog</h1>
+                </div>
+                <div id="form">
+
+                    <?php
+                    if (!isset($_SESSION['session_username'])) {
+                        require_once('form/formLogin.php');
+                    } else {
+                        require_once('form/formEntered.php');
+                    }
+                    ?>
+
+                </div>
+            </div>
+            <div id ="leftside">
+                <p class="p"></p>
+            </div>
+            <div id ="rightside">
+                <p class="p"></p>
+            </div>
+            <div id="singleContent">
+                <h3><?php echo $articleItem['title']; ?></h3>
+                <span class="name">Автор: <?php echo $articleItem['author_name']; ?></span>
+                <span class="date"><?php echo $articleItem['date']; ?></span>
+                <p><?php echo $articleItem['content']; ?></p><br>
+                <a class="src" href="http://test25/">Назад</a>
+            </div>
+            <div id ="footer">
+                <p class="p">FOOTER<p>
             </div>
         </div>
     </body>
 </html>
-
-
-
 

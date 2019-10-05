@@ -40,7 +40,7 @@
                     <tr>
                         <td><?php echo $title['title']; ?></td>
                         <td>Изменить</td>
-                        <td>Удалить</td>
+                        <td><a href="http://test25/myarticles/delete/<?php echo $title['id'];?>">Удалить</a></td>
                     </tr>
                     <?php }} ?>
                     <tr>

@@ -6,14 +6,14 @@ body {
     width: 1500px;
     margin: 0 auto;   
     border: solid #efefef 0px;
-    
+
 }
 a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     margin-right: 25px;
-    
+
 }
 a:hover {
     text-decoration: underline;
@@ -101,22 +101,22 @@ p {
     height: 17px;
 }
 .bForm {
-   height: 30px;
-   width: 95px;
-   margin-top: 5px;
-   border-radius: 7px;
-   background: Crimson;
-   color: #efefef;
-   font-weight: bold;
-   font-family: COMIC SANS MS;
-   
-   
-    
+    height: 30px;
+    width: 95px;
+    margin-top: 5px;
+    border-radius: 7px;
+    background: Crimson;
+    color: #efefef;
+    font-weight: bold;
+    font-family: COMIC SANS MS;
+
+
+
 }
 #reg {
-     text-decoration: none;
-     color: #efefef;
-    
+    text-decoration: none;
+    color: #efefef;
+
 }
 
 
@@ -157,6 +157,19 @@ p {
 }
 
 
+/*Single.php*/
+#singleContent {
+    width: 950px;  
+    float: left;
+    margin-left: 15px ;
+    padding: 7px;
+    border-style: inset;
+    background: #efefef;
+    text-align: justify;
+    color: black;
+    border-radius: 10px;
+}
+
 /*ArticleTable.php*/
 table {
     width: 950px;
@@ -191,40 +204,42 @@ tr:nth-child(even) {
     font-family: SEGOE PRINT;
     color: #efefef;
     text-align: left;
-    
+
 }
 .titleForm {
+    background: url(images/line.png);
     width: 690px;
-    height: 30px;
+    height: 26px;
     border-radius: 10px;
-    font-family: times new roman;
-    font-size: 20pt;
-   
+    font: normal 14px verdana;
+    padding: 2px 10px;
+
 }
 .textarea {
     background: url(images/line.png) repeat-y;
     width: 690px;
     height: 550px;
     border-radius: 10px;
+    border: solid 1px #ddd;
     /*font-family: verdana;*/
     /*font-size: 14pt;*/
     resize: none;
     font: normal 14px verdana;
     line-height: 25px;
-    /*padding: 2px 10px;*/
-    
+    padding: 2px 10px;
+
 
 }
 .subAdd {
-   height: 30px;
-   width: 95px;
-   margin-top: 5px;
-   border-radius: 7px;
-   background: Crimson;
-   color: #efefef;
-   margin-left: 600px;  
-   font-weight: bold;
-   font-family: COMIC SANS MS;
+    height: 30px;
+    width: 95px;
+    margin-top: 5px;
+    border-radius: 7px;
+    background: Crimson;
+    color: #efefef;
+    margin-left: 600px;  
+    font-weight: bold;
+    font-family: COMIC SANS MS;
 }
 
 
