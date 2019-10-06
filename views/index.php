@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=1211">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=1222111">
     </head>
     <body>
         <div id ="container">
@@ -30,6 +30,11 @@
             <div id ="rightside">
                 <p class="p"></p>
             </div>
+            <div class="pag">
+                <?php for ($i = $resultCount; $i >= 1; $i--) { ?>
+                    <a class="aPag" href="<?php echo $i; ?>"><?php echo $i; ?></a>
+                <?php } ?>
+            </div>
             <?php foreach ($articleList as $article) { ?>
                 <div id="content">
                     <h3><?php echo $article['title']; ?></h3>
@@ -39,6 +44,7 @@
                     <span class="src"><a href="http://test25/article/<?php echo $article['id'] ?>">Читать полностью</a></span>
                 </div>
             <?php } ?>
+
             <div id ="footer">
                 <p class="p">FOOTER<p>
             </div>

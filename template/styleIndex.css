@@ -35,7 +35,7 @@ h3 {
 }
 p {
     text-indent: 30px;
-    font-family: commercialscript bt;
+    font-family: Helvetica;
 }
 .p {
     font-family: COMIC SANS MS;
@@ -135,13 +135,15 @@ p {
     height: 230px;
     width: 950px;
     float: left;
+    font-family: Helvetica;
     margin-left: 15px ;
     padding: 7px;
     border-style: inset;
-    background: #efefef;
+    background: Bisque;
     text-align: justify;
     color: black;
     border-radius: 10px;
+    border-color:  Bisque;
 }
 .date{
     float: right;
@@ -161,7 +163,22 @@ p {
     float: right;
     text-align: right;
 }
-
+.pag {
+    width: 950px;
+    float: left;
+    margin-left: 15px ;
+    padding: 7px;
+    border-style: inset;
+    background: Bisque;
+    text-align: justify;
+    color: black;
+    border-radius: 10px;
+    border-color: Bisque;
+}
+.aPag {
+    font-family: cursive;
+    float: right;
+}
 
 /*Single.php*/
 #singleContent {
@@ -170,11 +187,13 @@ p {
     margin-left: 15px ;
     padding: 7px;
     border-style: inset;
-    background: #efefef;
+    background: Bisque;
     text-align: justify;
     color: black;
     border-radius: 10px;
+    border-color: Bisque;
 }
+
 
 /*ArticleTable.php*/
 table {

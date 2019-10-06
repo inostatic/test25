@@ -20,15 +20,27 @@ class Article {
         }
     }
 
-    public static function getArticleList() {
+    public static function getArticleList($pageNum) {
         //Подключаем PDO параметры уже внутри
         $db = Db::getConnection();
+        if (isset($pageNum)) {
+            $int = intval($pageNum);
+            if (is_int($int)) {
+                $page = $int;
+            } else {
+                $page = 1;
+            }
+        } else {
+            $page = 1;
+        }
+        $notesOnPage = 5;
+        $shift = ($page - 1) * $notesOnPage;
 
         $articleList = [];
         $result = $db->query('SELECT id, title, date, short_content, author_name '
                 . 'FROM article '
                 . 'ORDER BY date DESC '
-                . 'LIMIT 5');
+                . 'LIMIT ' . $shift . ', ' . $notesOnPage . '');
 
 
         $i = 0;
@@ -40,7 +52,14 @@ class Article {
             $articleList[$i]['author_name'] = $row['author_name'];
             $i++;
         }
-        return $articleList;
+//        ПАГИНАЦИЯ
+        $result = $db->query("SELECT COUNT(*) FROM article");
+        $result = $result->fetch();
+        $count = $result['0'];
+        $resultCount = ceil($count / $notesOnPage);
+
+        $resultEnd = [$articleList, $resultCount];
+        return $resultEnd;
     }
 
 }
