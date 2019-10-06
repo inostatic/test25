@@ -47,8 +47,14 @@ p {
     font-weight: bold;
     color: #efefef;
 }
-
-
+.Ht {
+    color: AntiqueWhite;
+    text-decoration: none;
+}
+.Ht:hover {
+    color: AntiqueWhite;
+    text-decoration: none;
+}
 
 
 

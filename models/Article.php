@@ -12,7 +12,12 @@ class Article {
         //Убираем повторяющиеся елементы с числовыми ключами
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $articleItem = $result->fetch();
-        return $articleItem;
+        if ($articleItem != NULL) {
+            return $articleItem;
+        } else {
+            header('Location: http://test25');
+            exit();
+        }
     }
 
     public static function getArticleList() {

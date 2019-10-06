@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=111">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=1111">
     </head>
     <body>
         <div id ="container">
             <div id ="header">
                 <div id="title">
-                    <h1>My First Blog</h1>
+                    <h1><a class='Ht' href="http://test25">My First Blog</a></h1>
                 </div>
                 <div id="form">
                 </div>
