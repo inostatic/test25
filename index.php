@@ -12,5 +12,3 @@ require_once(ROOT.'/components/db.php');
 $router = new Router();
 $router->run();
 
-
-//1.Переменовать бд согласно изменениям в бд_парамс
