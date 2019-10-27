@@ -53,7 +53,7 @@
                     <form action="" method="post">
                         <input type="hidden" name="author_id" value="">
                         <textarea name="comment" class='textarea'></textarea>
-                        <input type="submit" name="go" class='subAdd'>
+                        <input type="submit" name="submit" class='subAdd'>
                     </form>
                 <?php } ?> 
             </div>
