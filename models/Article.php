@@ -13,7 +13,21 @@ class Article {
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $articleItem = $result->fetch();
         if ($articleItem != NULL) {
-            return $articleItem;
+            $articleArrResult[] = $articleItem;
+            $result = $db->query('SELECT*FROM comments WHERE article_id = ' . $id 
+                    . ' ORDER BY date DESC');
+            if ($result != NULL) {
+                $articleComments = [];
+                $i = 0;
+                while ($row = $result->fetch()) {
+                    $articleComments[$i]['author_name'] = $row['author_name'];
+                    $articleComments[$i]['date'] = $row['date'];
+                    $articleComments[$i]['comment'] = $row['comment'];
+                    $i++;
+                }
+                $articleArrResult[] = $articleComments;
+            }
+            return $articleArrResult;
         } else {
             header('Location: http://test25');
             exit();

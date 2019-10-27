@@ -5,7 +5,13 @@ include_once ROOT . '/models/Article.php';
 class ArticleController {
 
     public function methodSingle($id) {
-        $articleItem = Article::getArticleItemById($id);
+        $articleArrResult = Article::getArticleItemById($id);
+        $articleItem = $articleArrResult[0];
+        if(isset($articleArrResult[1])) {
+        $articleComments = $articleArrResult[1];
+        } else {
+            $articleComments = "";
+        }
         include_once ROOT . '/views/Single.php';
     }
 

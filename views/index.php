@@ -35,7 +35,7 @@
                 <?php for ($i = $resultCount; $i >= 1; $i--) { ?>
                     <a class="aPag" href="<?php echo $i; ?>"><?php echo $i; ?></a>
                 <?php } ?>
-                <a class="aPag"><<</a>
+                <a class="aPag" href=""><<</a>
             </div>
             <?php foreach ($articleList as $article) { ?>
                 <div id="content">
