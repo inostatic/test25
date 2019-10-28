@@ -7,6 +7,28 @@ class Article {
         $id = intval($id);
         //Подключаем PDO параметры уже внутри
         $db = Db::getConnection();
+        if(isset($_SESSION['session_username'])) {
+            if(isset($_POST['submit'])) {
+                if(!empty($_POST['comment'])) {
+                 
+                    $comment = htmlspecialchars($_POST['comment']);
+                    $author_id = $_SESSION['session_username']['id'];
+                    $author_name = $_SESSION['session_username']['username'];
+                    $article_id = $id;
+                    $db = Db::getConnection();
+                    $query = "INSERT INTO comments (comment, author_id, author_name, article_id) VALUES ('$comment', '$author_id', '$author_name', '$article_id')";
+                    $result = $db->query($query);
+                    if ($result != NULL) {
+                        header("Location: http://test25/article/$id");
+                        exit();
+                    }
+                } else {
+                    $messege = "Ошибка, заполните все поля!";
+                }
+                
+            }
+        }
+        
         //Делаем выборку
         $result = $db->query('SELECT*FROM article WHERE id=' . $id);
         //Убираем повторяющиеся елементы с числовыми ключами

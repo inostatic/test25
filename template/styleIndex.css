@@ -193,6 +193,19 @@ p {
     border-radius: 10px;
     border-color: Bisque;
 }
+.singleTextarea {
+    background: url(images/line.png) repeat-y;
+    width: 670px;
+    height: 150px;
+    border-radius: 10px;
+    border: solid 1px #ddd;
+    font-family: verdana;
+    font-size: 14pt;
+    resize: none;
+    font: normal 14px verdana;
+    line-height: 25px;
+    padding: 2px 10px;   
+}
 
 
 /*ArticleTable.php*/

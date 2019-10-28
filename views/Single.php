@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=1221">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=122121">
     </head>
     <body>
         <div id ="container">
@@ -38,25 +38,33 @@
                 <a class="src" href="http://test25/">Назад</a>
             </div>
             <div class="pag">
-                <h3>Comments</h3>
-                <?php if (!empty($articleComments)) { ?>
- 
-                    <?php foreach ($articleComments as $articleComment) { ?>
+                <h3>Комментарии пользователей:</h3>
+            </div>
+            <?php if (!empty($articleComments)) { ?>
+
+                <?php foreach ($articleComments as $articleComment) { ?>
+                    <div class="pag">
                         <span class="name">Автор: <?php echo $articleComment['author_name']; ?></span>
                         <span class="date"><?php echo $articleComment['date']; ?></span>
                         <p><?php echo $articleComment['comment']; ?></p><br>
-                        <?php
-                    }
-                }
-                ?>
-                <?php if (isset($_SESSION['session_username'])) { ?>
+                    </div>
+                <?php } ?>
+            <?php } else { ?>
+            <div class="pag">
+                <h3>Статью еще никто не комментировал!</h3>
+            </div>
+            <?php } ?>
+
+            <?php if (isset($_SESSION['session_username'])) { ?>
+                <div class="pag">
                     <form action="" method="post">
                         <input type="hidden" name="author_id" value="">
-                        <textarea name="comment" class='textarea'></textarea>
+                        <textarea name="comment" class='singleTextarea'></textarea>
                         <input type="submit" name="submit" class='subAdd'>
                     </form>
-                <?php } ?> 
-            </div>
+                </div>
+            <?php } ?> 
+
             <div id ="footer">
                 <p class="p">FOOTER<p>
             </div>
