@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=1222111">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=5521211">
     </head>
     <body>
         <div id ="container">
@@ -31,11 +31,11 @@
                 <p class="p"></p>
             </div>
             <div class="pag">
-                <a class="aPag" href="">>></a>
+              <?php require_once 'form/pagRight.php'; ?>
                 <?php for ($i = $resultCount; $i >= 1; $i--) { ?>
                     <a class="aPag" href="<?php echo $i; ?>"><?php echo $i; ?></a>
                 <?php } ?>
-                <a class="aPag" href=""><<</a>
+               <?php require_once 'form/pagLeft.php'; ?>
             </div>
             <?php foreach ($articleList as $article) { ?>
                 <div id="content">
