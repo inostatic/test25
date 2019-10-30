@@ -179,7 +179,12 @@ p {
     font-family: cursive;
     float: right;
 }
-
+.active {
+    text-decoration: underline;
+    font-family: cursive;
+    float: right;
+    color: blue;
+}
 
 /*Single.php*/
 #singleContent {
