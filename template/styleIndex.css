@@ -179,6 +179,12 @@ p {
     font-family: cursive;
     float: right;
 }
+.aPagDest {
+    font-family: cursive;
+    float: right;
+    pointer-events: none;
+    color: grey;
+}
 .active {
     text-decoration: underline;
     font-family: cursive;
