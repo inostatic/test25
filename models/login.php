@@ -15,7 +15,7 @@ class Login {
                     $_SESSION['session_username'] = $row;
                     header('Location: http://test25');
                 } else {
-                    echo "net";
+                    header('Location: ../components/erorr_file.php');
                 }
             }
         }
