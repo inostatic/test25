@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=1111">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=12111">
     </head>
     <body>
         <div id ="container">

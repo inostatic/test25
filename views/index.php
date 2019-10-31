@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=3355221211">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=335225221211">
     </head>
     <body>
         <div id ="container">

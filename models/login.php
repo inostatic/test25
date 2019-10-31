@@ -13,7 +13,8 @@ class Login {
                 $row = $result->fetch();
                 if ($row != NULL) {
                     $_SESSION['session_username'] = $row;
-                    header('Location: http://test25');
+                    $header = $_SERVER['HTTP_REFERER'];
+                    header("Location: $header");
                 } else {
                     header('Location: ../components/erorr_file.php');
                 }

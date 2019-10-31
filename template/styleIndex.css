@@ -79,12 +79,12 @@ p {
     border-radius: 10px;
 }
 .menu {
-    font-size: 12pt;
+    font-size: 20px;
     text-align: left;
     font-family: stylus bt;
     font-weight: bold;
     color: AntiqueWhite;
-    text-indent: 0px;
+    text-indent: 30px;
 }
 .a {
     text-decoration: none;  
