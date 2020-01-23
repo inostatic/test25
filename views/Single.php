@@ -31,10 +31,10 @@
                 <p class="p"></p>
             </div>
             <div id="singleContent">
-                <h3><?php echo $articleItem['title']; ?></h3>
-                <span class="name">Автор: <?php echo $articleItem['author_name']; ?></span>
-                <span class="date"><?php echo $articleItem['date']; ?></span>
-                <p><?php echo $articleItem['content']; ?></p><br>
+                <h3><?=$articleItem['title']; ?></h3>
+                <span class="name">Автор: <?=$articleItem['author_name']; ?></span>
+                <span class="date"><?=$articleItem['date']; ?></span>
+                <p><?=$articleItem['content']; ?></p><br>
                 <a class="src" href="http://test25/">Назад</a>
             </div>
             <div class="pag">
@@ -44,9 +44,9 @@
 
                 <?php foreach ($articleComments as $articleComment) { ?>
                     <div class="pag">
-                        <span class="name">Автор: <?php echo $articleComment['author_name']; ?></span>
-                        <span class="date"><?php echo $articleComment['date']; ?></span>
-                        <p><?php echo $articleComment['comment']; ?></p><br>
+                        <span class="name">Автор: <?=$articleComment['author_name']; ?></span>
+                        <span class="date"><?=$articleComment['date']; ?></span>
+                        <p><?=$articleComment['comment']; ?></p><br>
                     </div>
                 <?php } ?>
             <?php } else { ?>

@@ -32,9 +32,9 @@
             <div>
                 <form action='' method='POST' class="redactor">
                     <p class='title'><label>Название статьи:</label></p>
-                    <input class='titleForm' type='text' name ='title' value="<?php echo $article['title']; ?>">
+                    <input class='titleForm' type='text' name ='title' value="<?=$article['title']; ?>">
                     <p class='title'><label>Содержание статьи:</label></p>
-                    <textarea class='textarea' name='content'><?php echo $article['content']; ?></textarea>
+                    <textarea class='textarea' name='content'><?=$article['content']; ?></textarea>
                     <input type='submit' name='add' class='subAdd' value="Изменить">
                     <button type="submit" class="subAdd" name="submit"><a class="bRed" href="http://test25/myarticles">Отмена</a></button>
                 </form>

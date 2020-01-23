@@ -35,11 +35,11 @@
             </div>
             <?php foreach ($articleList as $article) { ?>
                 <div id="content">
-                    <h3><?php echo $article['title']; ?></h3>
-                    <span class="name">Автор: <?php echo $article['author_name']; ?></span>
-                    <span class="date"><?php echo $article['date']; ?></span>
+                    <h3><?=$article['title']; ?></h3>
+                    <span class="name">Автор: <?=$article['author_name']; ?></span>
+                    <span class="date"><?=$article['date']; ?></span>
                     <p><?php echo $article['short_content']; ?></p><br>
-                    <span class="src"><a href="http://test25/article/<?php echo $article['id'] ?>">Читать полностью</a></span>
+                    <span class="src"><a href="http://test25/article/<?=$article['id'] ?>">Читать полностью</a></span>
                 </div>
             <?php } ?>
 
