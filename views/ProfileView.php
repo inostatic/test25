@@ -3,32 +3,14 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?asd=52231">
+        <link rel="stylesheet" href="../template/styleIndex.css?asd=522231">
     </head>
     <body>
-        <div id ="container">
-            <div id ="header">
-                <div id="title">
-                    <h1><a class='Ht' href="http://test25">Личные данные</a></h1>
-                </div>
-                <div id="form">
-
-                    <?php
-                    if (!isset($_SESSION['session_username'])) {
-                        require_once('form/formLogin.php');
-                    } else {
-                        require_once('form/formEntered.php');
-                    }
-                    ?>
-
-                </div>
+        <?php require_once "form/nav.php"; 
+              require_once "$checkAuth"; ?>
             </div>
-            <div id ="leftside">
-                <p class="p"></p>
-            </div>
-            <div id ="rightside">
-                <p class="p"></p>
-            </div>
+        </nav>
+        <article id ="container">
             <div>
                 <table>
                     <tr>
@@ -48,10 +30,8 @@
                     </tr>
                 </table> 
             </div>
-
-            <div id ="footer">
-                <p class="p">FOOTER<p>
-            </div>
-        </div>
-    </body>
+        </article>
+        <?php require_once 'form/footer.php'; ?>
+    </div>
+</body>
 </html>

@@ -1,11 +1,13 @@
 /*ОБЩИЕ СТИЛИ*/
 body {
-    background: FireBrick;
+    background: #0076c1;
 }
 #container {
-    width: 1500px;
+    width: 100%;
     margin: 0 auto;   
     border: solid #efefef 0px;
+    margin-left: 23%;
+
 
 }
 a {
@@ -25,6 +27,7 @@ h1 {
     text-align: center;
     color: AntiqueWhite;
     font-family: SEGOE PRINT;
+    margin-left: 40%;
 }
 
 h3 {
@@ -50,6 +53,7 @@ p {
 .Ht {
     color: AntiqueWhite;
     text-decoration: none;
+    text-indent: 10px;
 }
 .Ht:hover {
     color: AntiqueWhite;
@@ -61,10 +65,11 @@ p {
 /*ШАПКА*/
 #header {
     height: 200px;
-    width: 1500px;
-    background-color: Maroon;
-    margin: 10px auto;
-    border-radius: 10px;
+    width: 100%;
+    background-color: #173d9d;
+    /*margin: 10px auto;*/
+    border-radius: 4px;
+    margin-top: -8px;
 }
 #title {
     height: 200px;
@@ -75,20 +80,22 @@ p {
     height: 200px;
     width: 200px;
     float: right;
-    background: Maroon;
+    background: #173d9d;
     border-radius: 10px;
 }
 .menu {
     font-size: 20px;
     text-align: left;
     font-family: stylus bt;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: AntiqueWhite;
     text-indent: 30px;
 }
 .a {
     text-decoration: none;  
     color: AntiqueWhite;
+/*    background-color: #454957;*/
+    
 }
 .a:hover {
     text-decoration: underline;
@@ -101,7 +108,7 @@ p {
     font-family: COMIC SANS MS;
 }
 .fForm {
-    border-radius: 7px;
+    border-radius: 5px;
     font-family: times new roman;
     width: 190px;
     height: 17px;
@@ -110,10 +117,10 @@ p {
     height: 30px;
     width: 95px;
     margin-top: 5px;
-    border-radius: 7px;
-    background: Crimson;
+    /*border-radius: 7px;*/
+    background: #454957;
     color: #efefef;
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-family: COMIC SANS MS;
 
 
@@ -137,13 +144,14 @@ p {
     float: left;
     font-family: Helvetica;
     margin-left: 15px ;
+
     padding: 7px;
     border-style: inset;
-    background: Bisque;
+    background: #ffffff;
     text-align: justify;
     color: black;
     border-radius: 10px;
-    border-color:  Bisque;
+    border-color:  #173d9d;
 }
 .date{
     float: right;
@@ -169,11 +177,11 @@ p {
     margin-left: 15px ;
     padding: 7px;
     border-style: inset;
-    background: Bisque;
+    background: #ffffff;
     text-align: justify;
     color: black;
     border-radius: 10px;
-    border-color: Bisque;
+    border-color: #173d9d;
 }
 .aPag {
     font-family: cursive;
@@ -199,11 +207,11 @@ p {
     margin-left: 15px ;
     padding: 7px;
     border-style: inset;
-    background: Bisque;
+    background: #ffffff;
     text-align: justify;
     color: black;
     border-radius: 10px;
-    border-color: Bisque;
+    border-color: #173d9d;
 }
 .singleTextarea {
     background: url(images/line.png) repeat-y;
@@ -335,32 +343,15 @@ tr:nth-child(even) {
 
 
 
-
-/*ЛЕВАЯ ОБЛАСТЬ*/
-#leftside {
-    /*background-color: white;*/
-    background-color: FireBrick;
-    height: 1250px;
-    width: 250px;
-    float: left;
-
-}
-/*ПРАВАЯ ОБЛАСТЬ*/
-#rightside {
-    /*background-color: white;*/
-    background-color: FireBrick;
-    height: 1250px;
-    width: 250px;
-    float: right;
-
-}
 /*ПОДВАЛ*/
 #footer {
-    height: 200px;
-    width: 100%;
-    background-color: Maroon;
-    clear: both; 
-    border-radius: 10px;
+/*width: 99%;
+height: 200px;
+background-color: #173d9d;
+ clear: both; 
+margin-bottom: -8px;
+
+border-radius: 4px;*/
 }
 
 

@@ -4,37 +4,19 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=1222121">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=12222121">
     </head>
     <body>
-        <div id ="container">
-            <div id ="header">
-                <div id="title">
-                    <h1><a class='Ht' href="http://test25">My First Blog</a></h1>
-                </div>
-                <div id="form">
-
-                    <?php
-                    if (!isset($_SESSION['session_username'])) {
-                        require_once('form/formLogin.php');
-                    } else {
-                        require_once('form/formEntered.php');
-                    }
-                    ?>
-
-                </div>
+        <?php require_once "form/nav.php"; 
+              require_once "$checkAuth"; ?>
             </div>
-            <div id ="leftside">
-                <p class="p"></p>
-            </div>
-            <div id ="rightside">
-                <p class="p"></p>
-            </div>
+        </nav>
+        <article id ="container">
             <div id="singleContent">
-                <h3><?=$articleItem['title']; ?></h3>
-                <span class="name">Автор: <?=$articleItem['author_name']; ?></span>
-                <span class="date"><?=$articleItem['date']; ?></span>
-                <p><?=$articleItem['content']; ?></p><br>
+                <h3><?= $articleItem['title']; ?></h3>
+                <span class="name">Автор: <?= $articleItem['author_name']; ?></span>
+                <span class="date"><?= $articleItem['date']; ?></span>
+                <p><?= $articleItem['content']; ?></p><br>
                 <a class="src" href="http://test25/">Назад</a>
             </div>
             <div class="pag">
@@ -44,15 +26,15 @@
 
                 <?php foreach ($articleComments as $articleComment) { ?>
                     <div class="pag">
-                        <span class="name">Автор: <?=$articleComment['author_name']; ?></span>
-                        <span class="date"><?=$articleComment['date']; ?></span>
-                        <p><?=$articleComment['comment']; ?></p><br>
+                        <span class="name">Автор: <?= $articleComment['author_name']; ?></span>
+                        <span class="date"><?= $articleComment['date']; ?></span>
+                        <p><?= $articleComment['comment']; ?></p><br>
                     </div>
                 <?php } ?>
             <?php } else { ?>
-            <div class="pag">
-                <h3>Статью еще никто не комментировал!</h3>
-            </div>
+                <div class="pag">
+                    <h3>Статью еще никто не комментировал!</h3>
+                </div>
             <?php } ?>
 
             <?php if (isset($_SESSION['session_username'])) { ?>
@@ -64,11 +46,8 @@
                     </form>
                 </div>
             <?php } ?> 
-
-            <div id ="footer">
-                <p class="p">FOOTER<p>
-            </div>
-        </div>
+        </article>
+        <?php require_once 'form/footer.php'; ?>
     </body>
 </html>
 

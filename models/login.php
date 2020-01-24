@@ -2,7 +2,7 @@
 
 class Login {
 
-    public static function cheackLogin() {
+    public static function cheackLogin($checkAuth) {
         if (isset($_POST["submit"])) {
             if (!empty($_POST['username']) and ! empty($_POST['password'])) {
                 $username = htmlspecialchars($_POST['username']);

@@ -3,7 +3,7 @@
 
 class Profile {
 
-    public static function getMyProfile() {
+    public static function getMyProfile($checkAuth) {
         if (isset($_SESSION['session_username'])) {
            $db = Db::getConnection();
            if(isset($_POST['submit'])) {

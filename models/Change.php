@@ -13,7 +13,7 @@
  */
 class Change {
 
-    public static function changeArticle($id) {
+    public static function changeArticle($id, $checkAuth) {
         if (!isset($_SESSION['session_username'])) {
             header('Location: http://test25');
             exit();

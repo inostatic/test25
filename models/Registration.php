@@ -2,7 +2,7 @@
 
 Class Registration {
 
-    public static function regist() {
+    public static function regist($checkAuth) {
         if (isset($_POST['register'])) {
             if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password'])) {
                 $full_name = htmlspecialchars($_POST['full_name']);

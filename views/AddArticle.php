@@ -3,32 +3,14 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?asd=52422">
+        <link rel="stylesheet" href="../template/styleIndex.css?asd=52223233422">
     </head>
     <body>
-        <div id ="container">
-            <div id ="header">
-                <div id="title">
-                    <h1><a class='Ht' href="http://test25">Добавить новую статью</a></h1>
-                </div>
-                <div id="form">
-
-                    <?php
-                    if (!isset($_SESSION['session_username'])) {
-                        require_once('form/formLogin.php');
-                    } else {
-                        require_once('form/formEntered.php');
-                    }
-                    ?>
-
-                </div>
+        <?php require_once "form/nav.php"; 
+              require_once "$checkAuth"; ?>
             </div>
-            <div id ="leftside">
-                <p class="p"></p>
-            </div>
-            <div id ="rightside">
-                <p class="p"></p>
-            </div>
+        </nav>
+        <article id ="container">
             <div>
                 <form action='' method='POST' class="redactor">
                     <p class='title'><label>Название статьи:</label></p>
@@ -39,11 +21,8 @@
                     <button type="submit" class="subAdd" name="submit"><a class="bRed" href="http://test25/myarticles">Отмена</a></button>
                 </form>
             </div>
-
-            <div id ="footer">
-                <p class="p">FOOTER<p>
-            </div>
-        </div>
+        </article>
+        <?php require_once 'form/footer.php'; ?>
     </body>
 </html>
 

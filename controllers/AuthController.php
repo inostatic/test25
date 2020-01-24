@@ -2,15 +2,15 @@
 
 class AuthController {
 
-    public function methodRegistration() {
+    public function methodRegistration($checkAuth) {
         include_once ROOT . '/models/Registration.php';
-        Registration::regist();
+        Registration::regist($checkAuth);
         include_once ROOT . '/views/Register.php';
     }
 
-    public function methodLogin() {
+    public function methodLogin($checkAuth) {
         include_once ROOT . '/models/login.php';
-        Login::cheackLogin();
+        Login::cheackLogin($checkAuth);
     }
 
     public function methodLogout() {

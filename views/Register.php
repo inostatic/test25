@@ -3,23 +3,14 @@
     <head>
         <meta charset="utf8">
         <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=12111">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=122111">
     </head>
     <body>
-        <div id ="container">
-            <div id ="header">
-                <div id="title">
-                    <h1><a class='Ht' href="http://test25">My First Blog</a></h1>
-                </div>
-                <div id="form">
-                </div>
+        <?php require_once "form/nav.php"; 
+              require_once "$checkAuth"; ?>
             </div>
-            <div id ="leftside">
-                <p class="p"></p>
-            </div>
-            <div id ="rightside">
-                <p class="p"></p>
-            </div>
+        </nav>
+        <article id ="container">
             <div id="regist">
                 <form action="" method="POST">
                     <p class="fName" ><label>Полное имя</label></p>
@@ -33,12 +24,11 @@
                     <p class="fName"><input name= "register" id="bReg" type="submit" value="Зарегистрироваться"></p>
                     <p class="fName">Уже зарегистрированы? <a href= "http://test25">Назад</a></p>
                 </form>
-                <?php if (!empty($message)) { echo "<p class='fName'>" . "Сообщение: " . $message . "</p>";} ?>
-            </div>
-            <div id ="footer">
-                <p class="p">FOOTER<p>
-            </div>
-        </div>
+                <?php if (!empty($message)) {
+                    echo "<p class='fName'>" . "Сообщение: " . $message . "</p>";
+                } ?>
+        </article>
+        <?php require_once 'form/footer.php'; ?>
     </body>
 </html>
 

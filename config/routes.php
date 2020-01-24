@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    "" => "article/index",
+    "" => "article/index/1",
     "([0-9]+)" => "article/index/$1",
     "article/([0-9]+)" => "article/single/$1",
     "myarticles" => "redactor/articles",

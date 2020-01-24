@@ -2,7 +2,7 @@
 
 class Add {
 
-    public static function addArticle() {
+    public static function addArticle($checkAuth) {
         if (!isset($_SESSION['session_username'])) {
             header('Location: http://test25');
             exit();

@@ -16,8 +16,20 @@ class Router {
             return trim($_SERVER['REQUEST_URI'], '/');
         }
     }
+    
+    private function checkAuth() {
+        if (!isset($_SESSION['session_username'])) {
+                       $auth = 'form/formLogin.php';
+                    } else {
+                        $auth = 'form/formEntered.php';
+                    }
+                    return $auth;
+    }
 
     public function run() {
+        //Запуск функции проверка авторизации
+        $checkAuth = $this->checkAuth();
+//        var_dump($auth);
         //Получить строку запроса
         $uri = $this->getURI();
         //Проверить наличие такого запроса
@@ -35,6 +47,7 @@ class Router {
                 //Последний элемент массива(если он существует)
                 // является индексом нужной статьи
                 $params = $segments;
+                $params[] = $checkAuth;
                 //Узнаем путь к файлу с нужным контроллером
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
                 //если такой файл такому пути существует

@@ -5,7 +5,4 @@
     <input type="password" class="fForm" name="password"><br>
     <button type="submit" class="bForm" name="submit">Вход</button>
     <button type="submit" class="bForm" name="submit"><a id="reg" href="http://test25/register">Регистрация</a></button>
-    <!--<button type="submit" name="submit"><a href="">Вход</a></button>-->
-    <!--<input type="submit" name="submit" value="Вход">-->
-    <!--<input type="submit" value="Регистрация">-->
 </form>

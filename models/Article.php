@@ -2,7 +2,7 @@
 
 class Article {
 
-    public static function getArticleItemById($id) {
+    public static function getArticleItemById($id, $checkAuth) {
         //Обрезаем если число не целое
         $id = intval($id);
         //Подключаем PDO параметры уже внутри
@@ -56,7 +56,7 @@ class Article {
         }
     }
 
-    public static function getArticleList($pageNum) {
+    public static function getArticleList($pageNum, $checkAuth) {
         //Подключаем PDO параметры уже внутри
         $db = Db::getConnection();
         if (isset($pageNum)) {
@@ -69,7 +69,7 @@ class Article {
         } else {
             $page = 1;
         }
-        $notesOnPage = 5;
+        $notesOnPage = 10;
         $shift = ($page - 1) * $notesOnPage;
 
         $articleList = [];
@@ -77,6 +77,7 @@ class Article {
                 . 'FROM article '
                 . 'ORDER BY date DESC '
                 . 'LIMIT ' . $shift . ', ' . $notesOnPage . '');
+      
 
 
         $i = 0;
@@ -94,7 +95,7 @@ class Article {
         $count = $result['0'];
         $resultCount = ceil($count / $notesOnPage);
 
-        $resultEnd = [$articleList, $resultCount];
+        $resultEnd = [$articleList, $resultCount, $checkAuth];
         return $resultEnd;
     }
 

@@ -2,7 +2,7 @@
 
 class Articles {
 
-    public static function getArticles() {
+    public static function getArticles($checkAuth) {
         if (!isset($_SESSION['session_username'])) {
             header('Location: http://test25');
             exit();
