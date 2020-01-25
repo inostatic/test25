@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf8">
-        <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?asd=51221">
-    </head>
-    <body>
+
         <?php require_once "form/nav.php"; 
-              require_once "$checkAuth"; ?>
+              require_once "$checkAuth[enterned]"; ?>
             </div>
         </nav>
         <article id ="container">
@@ -18,11 +11,9 @@
                     <p class='title'><label>Содержание статьи:</label></p>
                     <textarea class='textarea' name='content'><?=$article['content']; ?></textarea>
                     <input type='submit' name='add' class='subAdd' value="Изменить">
-                    <button type="submit" class="subAdd" name="submit"><a class="bRed" href="http://test25/myarticles">Отмена</a></button>
+                    <button type="submit" class="subAdd" name="submit"><a class="bRed" href="<?=URL.'/myarticles';?>">Отмена</a></button>
                 </form>
             </div>
         </article>
         <?php require_once 'form/footer.php'; ?>
-        </div>
-    </body>
-</html>
+<?php // var_dump($article); ?>

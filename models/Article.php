@@ -2,63 +2,26 @@
 
 class Article {
 
-    public static function getArticleItemById($id, $checkAuth) {
+    public static function getArticleItemById($userSetting, $checkAuth) {
         //Обрезаем если число не целое
-        $id = intval($id);
-        //Подключаем PDO параметры уже внутри
-        $db = Db::getConnection();
-        if(isset($_SESSION['session_username'])) {
-            if(isset($_POST['submit'])) {
-                if(!empty($_POST['comment'])) {
-                 
-                    $comment = htmlspecialchars($_POST['comment']);
-                    $author_id = $_SESSION['session_username']['id'];
-                    $author_name = $_SESSION['session_username']['username'];
-                    $article_id = $id;
-                    $db = Db::getConnection();
-                    $query = "INSERT INTO comments (comment, author_id, author_name, article_id) VALUES ('$comment', '$author_id', '$author_name', '$article_id')";
-                    $result = $db->query($query);
-                    if ($result != NULL) {
-                        header("Location: http://test25/article/$id");
-                        exit();
-                    }
-                } else {
-                    $messege = "Ошибка, заполните все поля!";
-                }
-                
-            }
-        }
-        
-        //Делаем выборку
-        $result = $db->query('SELECT*FROM article WHERE id=' . $id);
-        //Убираем повторяющиеся елементы с числовыми ключами
-        $result->setFetchMode(PDO::FETCH_ASSOC);
-        $articleItem = $result->fetch();
-        if ($articleItem != NULL) {
-            $articleArrResult[] = $articleItem;
-            $result = $db->query('SELECT*FROM comments WHERE article_id = ' . $id 
-                    . ' ORDER BY date DESC');
+        $id = intval($userSetting['id']);
+        //Добавить новый комментарий в базу
+        if (isset($userSetting['comment'])) {
+            $result = Db::insert_into("INSERT INTO comments (comment, author_id, author_name, article_id)"
+            ."VALUES ('$userSetting[comment]', '$userSetting[author_id]', '$userSetting[author_name]', '$id')");
             if ($result != NULL) {
-                $articleComments = [];
-                $i = 0;
-                while ($row = $result->fetch()) {
-                    $articleComments[$i]['author_name'] = $row['author_name'];
-                    $articleComments[$i]['date'] = $row['date'];
-                    $articleComments[$i]['comment'] = $row['comment'];
-                    $i++;
-                }
-                $articleArrResult[] = $articleComments;
+                header("Location: ".URL."/article/$id");
+                exit();
             }
-            return $articleArrResult;
-        } else {
-            header('Location: http://test25');
-            exit();
         }
+        //получаем статью
+        $articleItem = Db::get_result('SELECT*FROM article WHERE id=' . $id);
+        $articleComments = Db::get_results('SELECT*FROM comments WHERE article_id = ' . $id
+                        . ' ORDER BY date DESC');
+        return $articleArrResult = [$articleItem, $articleComments];
     }
 
     public static function getArticleList($pageNum, $checkAuth) {
-        //Подключаем PDO параметры уже внутри
-        $db = Db::getConnection();
         if (isset($pageNum)) {
             $int = intval($pageNum);
             if (is_int($int)) {
@@ -72,27 +35,16 @@ class Article {
         $notesOnPage = 10;
         $shift = ($page - 1) * $notesOnPage;
 
-        $articleList = [];
-        $result = $db->query('SELECT id, title, date, short_content, author_name '
-                . 'FROM article '
-                . 'ORDER BY date DESC '
-                . 'LIMIT ' . $shift . ', ' . $notesOnPage . '');
-      
+        $articleList = Db::get_results('SELECT id, title, date, short_content, author_name '
+                        . 'FROM article '
+                        . 'ORDER BY date DESC '
+                        . 'LIMIT ' . $shift . ', ' . $notesOnPage . '');
 
 
-        $i = 0;
-        while ($row = $result->fetch()) {
-            $articleList[$i]['id'] = $row['id'];
-            $articleList[$i]['title'] = $row['title'];
-            $articleList[$i]['date'] = $row['date'];
-            $articleList[$i]['short_content'] = $row['short_content'];
-            $articleList[$i]['author_name'] = $row['author_name'];
-            $i++;
-        }
+
 //        ПАГИНАЦИЯ
-        $result = $db->query("SELECT COUNT(*) FROM article");
-        $result = $result->fetch();
-        $count = $result['0'];
+        $count = Db::get_result("SELECT COUNT(*) FROM article");
+        $count = $count['COUNT(*)'];
         $resultCount = ceil($count / $notesOnPage);
 
         $resultEnd = [$articleList, $resultCount, $checkAuth];

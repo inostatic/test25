@@ -3,13 +3,27 @@ include_once ROOT . '/models/Article.php';
 class ArticleController {
 
     public function methodSingle($id, $checkAuth) {
-        $articleArrResult = Article::getArticleItemById($id, $checkAuth);
+        $userSetting['id'] = $id;
+        if (isset($_SESSION['session_username'])) {
+            if (isset($_POST['submit'])) {
+                if (!empty($_POST['comment'])) {
+
+                    $userSetting['comment'] = htmlspecialchars($_POST['comment']);
+                     $userSetting['author_id'] = $_SESSION['session_username']['id'];
+                     $userSetting['author_name'] = $_SESSION['session_username']['username'];
+                } else {
+                    $messege = "Ошибка, заполните все поля!";
+                }
+            }
+        }
+        $articleArrResult = Article::getArticleItemById($userSetting, $checkAuth);
         $articleItem = $articleArrResult[0];
-        if(isset($articleArrResult[1])) {
-        $articleComments = $articleArrResult[1];
+        if (isset($articleArrResult[1])) {
+            $articleComments = $articleArrResult[1];
         } else {
             $articleComments = "";
         }
+
         include_once ROOT . '/views/Single.php';
     }
 

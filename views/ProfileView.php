@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf8">
-        <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?asd=522231">
-    </head>
-    <body>
+
         <?php require_once "form/nav.php"; 
-              require_once "$checkAuth"; ?>
+              require_once "$checkAuth[enterned]"; ?>
             </div>
         </nav>
         <article id ="container">
@@ -32,6 +25,3 @@
             </div>
         </article>
         <?php require_once 'form/footer.php'; ?>
-    </div>
-</body>
-</html>

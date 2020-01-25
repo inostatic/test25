@@ -19,9 +19,11 @@ class Router {
     
     private function checkAuth() {
         if (!isset($_SESSION['session_username'])) {
-                       $auth = 'form/formLogin.php';
+                       $auth['enterned'] = 'form/formLogin.php';
+                       $auth['comment'] = 'form/noComment.php';
                     } else {
-                        $auth = 'form/formEntered.php';
+                        $auth['enterned'] = 'form/formEntered.php';
+                        $auth['comment'] = 'form/formComment.php';
                     }
                     return $auth;
     }
@@ -29,7 +31,6 @@ class Router {
     public function run() {
         //Запуск функции проверка авторизации
         $checkAuth = $this->checkAuth();
-//        var_dump($auth);
         //Получить строку запроса
         $uri = $this->getURI();
         //Проверить наличие такого запроса

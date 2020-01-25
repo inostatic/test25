@@ -1,14 +1,6 @@
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf8">
-        <title>blog</title>
-        <link rel="stylesheet" href="../template/styleIndex.css?a=12222121">
-    </head>
-    <body>
         <?php require_once "form/nav.php"; 
-              require_once "$checkAuth"; ?>
+              require_once "$checkAuth[enterned]"; ?>
             </div>
         </nav>
         <article id ="container">
@@ -17,7 +9,7 @@
                 <span class="name">Автор: <?= $articleItem['author_name']; ?></span>
                 <span class="date"><?= $articleItem['date']; ?></span>
                 <p><?= $articleItem['content']; ?></p><br>
-                <a class="src" href="http://test25/">Назад</a>
+                <a class="src" href="<?=URL;?>">Назад</a>
             </div>
             <div class="pag">
                 <h3>Комментарии пользователей:</h3>
@@ -35,19 +27,6 @@
                 <div class="pag">
                     <h3>Статью еще никто не комментировал!</h3>
                 </div>
-            <?php } ?>
-
-            <?php if (isset($_SESSION['session_username'])) { ?>
-                <div class="pag">
-                    <form action="" method="post">
-                        <input type="hidden" name="author_id" value="">
-                        <textarea name="comment" class='singleTextarea'></textarea>
-                        <input type="submit" name="submit" class='subAdd'>
-                    </form>
-                </div>
-            <?php } ?> 
+            <?php } require_once "$checkAuth[comment]";?>
         </article>
         <?php require_once 'form/footer.php'; ?>
-    </body>
-</html>
-

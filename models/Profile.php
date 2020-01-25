@@ -2,30 +2,24 @@
 
 
 class Profile {
-
-    public static function getMyProfile($checkAuth) {
-        if (isset($_SESSION['session_username'])) {
-           $db = Db::getConnection();
-           if(isset($_POST['submit'])) {
-               $id = $_SESSION['session_username']['id'];
-               if(!empty($_POST['full_name'])) {
-                   $full_name = $_POST['full_name'];
-                 $db->query("UPDATE user SET full_name = '$full_name' WHERE id = '$id'");
-            
-               }
-               if(!empty($_POST['email'])) {
-                   $email = $_POST['email'];
-                   $db->query("UPDATE user SET email = '$email' WHERE id = '$id'");
-               }
-           }
-           $result = $db->query("SELECT full_name, email FROM user WHERE id = ". $_SESSION['session_username']['id']);
-           $result->setFetchMode(PDO::FETCH_ASSOC);
-           $userProfile = $result->fetch();
-           if($userProfile != NULL) {
-               return $userProfile;
-           }
+    
+    public static function renameFull_name($params) {
+        Db::insert_into("UPDATE user SET full_name = '$params[full_name]' WHERE id = '$params[id]'");
+    }
+    
+    
+    public static function renameEmail($params) {
+        Db::insert_into("UPDATE user SET email = '$params[email]' WHERE id = '$params[id]'");
+    }
+    
+    
+    
+    public static function getMyProfile($params, $checkAuth) {
+        $result = Db::get_result("SELECT full_name, email FROM user WHERE id = " . $params['id']);
+        if ($result != NULL) {
+            return $result;
         } else {
-            header("Location: http://test25");
+            header("Location: " . URL);
         }
     }
 
