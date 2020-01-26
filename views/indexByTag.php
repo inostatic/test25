@@ -5,9 +5,10 @@
         </nav>
         <article id ="container">
             <div class="pag">
-                <?php require_once 'form/pagination.php'; ?>
+                <?php // require_once 'form/pagination.php'; ?>
             </div>
-            <?php foreach ($articleList as $article) { ?>
+            <?php foreach($articleArr as $articleList) {
+                foreach ($articleList as $article) { ?>
                 <div id="content">
                     <span><a href="<?=URL.'/article/';?><?= $article['id'] ?>"><h3><?= $article['title']; ?></h3></a></span>
                     <span class="name">Автор: <?= $article['author_name']; ?></span>
@@ -16,16 +17,17 @@
                     
                     <span>
                         <?php
+                            foreach($tagsArr as $tagList) {
                             if(array_key_exists($article['id'], $tagList)) {
                                foreach($tagList[$article['id']] as $elem) {
                                    echo $elem;
                                }
-                            }
+                            }}
                             ?>
                     </span>
                     
                     
                 </div>
-            <?php } ?>
+            <?php }} ?>
         </article>
      <?php require_once 'form/footer.php'; ?>

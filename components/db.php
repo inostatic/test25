@@ -8,39 +8,46 @@ class Db {
         $db = new PDO("mysql:host={$params['host']};dbname={$params['db_name']}", $params['user'], $params['password']);
         return $db;
     }
-    
+
     public static function query_first_result($query) {
         $db = self::getConnection();
         return $result = $db->query($query);
     }
+
     public static function query_result($query) {
         $db = self::getConnection();
         $result = $db->query($query);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetch();
     }
-    
+
     static function get_result($query) {
 
         $db = self::getConnection();
         $tmp = $db->query($query);
+//        var_dump($tmp);
         $tmp->setFetchMode(PDO::FETCH_ASSOC);
         return $result = $tmp->fetch();
-
     }
+
     public static function get_results($query) {
-         $db = self::getConnection();
-         $tmp = $db->query($query);
-         $result = [];
+        $db = self::getConnection();
+        $tmp = $db->query($query);
+        $result = [];
+//        var_dump($tmp);
+//        echo '<br><br>';
         $tmp->setFetchMode(PDO::FETCH_ASSOC);
         while ($row = $tmp->fetch()) {
             $result[] = $row;
         }
         return $result;
     }
+    
+
+
     public static function insert_into($query) {
-       $db = self::getConnection();
-       return $db->query($query);
+        $db = self::getConnection();
+        return $db->query($query);
     }
 
 }

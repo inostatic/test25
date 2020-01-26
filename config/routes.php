@@ -3,6 +3,7 @@
 return array(
     "" => "article/index/1",
     "([0-9]+)" => "article/index/$1",
+    "bytags/([0-9]+)" => "article/bytag/$1/1",
     "article/([0-9]+)" => "article/single/$1",
     "myarticles" => "redactor/articles",
     "myarticles/add" => "redactor/add",
@@ -11,4 +12,5 @@ return array(
     "login" => "auth/login",
     "register" => "auth/registration",
     "myprofile" => "Profile/Profile"
+    
 );

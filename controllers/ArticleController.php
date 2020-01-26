@@ -16,8 +16,10 @@ class ArticleController {
                 }
             }
         }
-        $articleArrResult = Article::getArticleItemById($userSetting, $checkAuth);
+        $articleArrResult = Article::getArticleItemById($userSetting, $checkAuth);  
         $articleItem = $articleArrResult[0];
+        
+        $tagList = Article::getArticleTag($articleItem, $flag = true);
         if (isset($articleArrResult[1])) {
             $articleComments = $articleArrResult[1];
         } else {
@@ -28,11 +30,14 @@ class ArticleController {
     }
 
     public function methodIndex($pageNum = 1, $checkAuth) {
-        $resultEnd = Article::getArticleList($pageNum, $checkAuth);
-        $articleList = $resultEnd['0'];
-        $resultCount = $resultEnd['1'];
-        $checkAuth = $resultEnd['2'];
-        include_once ROOT . '/views/index.php';
+        list($articleList, $resultCount, $checkAuth) = Article::getArticleList($pageNum, $checkAuth);
+        $tagList = Article::getArticleTag($articleList, $flag = false);
+          include_once ROOT . '/views/index.php';
+    }
+    
+    public static function methodBytag($id, $pageNum = 1, $checkAuth) {
+       list($articleArr, $tagsArr) = Article::getArticleListByTag($id, $pageNum = 1, $checkAuth);
+       include_once ROOT . '/views/indexByTag.php';
     }
 
 }
