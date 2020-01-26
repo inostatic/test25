@@ -4,9 +4,6 @@
             </div>
         </nav>
         <article id ="container">
-            <div class="pag">
-                <?php // require_once 'form/pagination.php'; ?>
-            </div>
             <?php foreach($articleArr as $articleList) {
                 foreach ($articleList as $article) { ?>
                 <div id="content">

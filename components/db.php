@@ -25,7 +25,9 @@ class Db {
 
         $db = self::getConnection();
         $tmp = $db->query($query);
+//                echo '<br><br>';
 //        var_dump($tmp);
+//                echo '<br><br>';
         $tmp->setFetchMode(PDO::FETCH_ASSOC);
         return $result = $tmp->fetch();
     }

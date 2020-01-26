@@ -36,7 +36,7 @@ class ArticleController {
     }
     
     public static function methodBytag($id, $pageNum = 1, $checkAuth) {
-       list($articleArr, $tagsArr) = Article::getArticleListByTag($id, $pageNum = 1, $checkAuth);
+       list($articleArr, $tagsArr, $resultCount) = Article::getArticleListByTag($id, $pageNum = 1, $checkAuth);
        include_once ROOT . '/views/indexByTag.php';
     }
 

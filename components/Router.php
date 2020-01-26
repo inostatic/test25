@@ -53,6 +53,7 @@ class Router {
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
                 //если такой файл такому пути существует
                 //подключаем его
+                
                 if (file_exists($controllerFile)) {
                     include_once $controllerFile;
                 }

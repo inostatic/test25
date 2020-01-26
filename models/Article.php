@@ -35,7 +35,7 @@ class Article {
         $count = $count['COUNT(*)'];
         $resultCount = ceil($count / $notesOnPage);
       
-
+        
         return [$articleList, $resultCount, $checkAuth];
         
     }
@@ -44,7 +44,7 @@ class Article {
         $URL = URL;
         $tagList = [];
         if ($flag) {
-            $routes = Db::get_results("SELECT * FROM `routes` WHERE post_id = $articleList[id]");
+            $routes = Db::get_results("SELECT * FROM `routes` WHERE post_id = '$articleList[id]'");
             if ($routes != NULL) {
                 foreach ($routes as $route) {
                     $tagArr = Db::get_results("SELECT * FROM `tags` WHERE id = $route[tag_id]");
@@ -93,8 +93,9 @@ class Article {
         foreach ($articleArr as $articleList) {
             $tagArr[] = self::getArticleTag($articleList, $flag = false);
         }
-      
-        return [$articleArr, $tagArr];
+        $count = count($articleArr);
+        $resultCount = ceil($count / $notesOnPage);
+        return [$articleArr, $tagArr, $resultCount];
     }
 
     private static function pagination($pageNum) {
