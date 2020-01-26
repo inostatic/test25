@@ -1,5 +1,6 @@
 <?php
-define('URL', 'http://'.$_SERVER['HTTP_HOST']);
+
+define('URL', 'http://' . $_SERVER['HTTP_HOST']);
 $header = URL;
 
 session_start();

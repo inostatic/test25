@@ -1,5 +1,7 @@
 <?php
+
 include_once ROOT . '/models/Article.php';
+
 class ArticleController {
 
     public function methodSingle($id, $checkAuth) {
@@ -9,16 +11,16 @@ class ArticleController {
                 if (!empty($_POST['comment'])) {
 
                     $userSetting['comment'] = htmlspecialchars($_POST['comment']);
-                     $userSetting['author_id'] = $_SESSION['session_username']['id'];
-                     $userSetting['author_name'] = $_SESSION['session_username']['username'];
+                    $userSetting['author_id'] = $_SESSION['session_username']['id'];
+                    $userSetting['author_name'] = $_SESSION['session_username']['username'];
                 } else {
                     $messege = "Ошибка, заполните все поля!";
                 }
             }
         }
-        $articleArrResult = Article::getArticleItemById($userSetting, $checkAuth);  
+        $articleArrResult = Article::getArticleItemById($userSetting, $checkAuth);
         $articleItem = $articleArrResult[0];
-        
+
         $tagList = Article::getArticleTag($articleItem, $flag = true);
         if (isset($articleArrResult[1])) {
             $articleComments = $articleArrResult[1];
@@ -32,12 +34,12 @@ class ArticleController {
     public function methodIndex($pageNum = 1, $checkAuth) {
         list($articleList, $resultCount, $checkAuth) = Article::getArticleList($pageNum, $checkAuth);
         $tagList = Article::getArticleTag($articleList, $flag = false);
-          include_once ROOT . '/views/index.php';
+        include_once ROOT . '/views/index.php';
     }
-    
+
     public static function methodBytag($id, $pageNum = 1, $checkAuth) {
-       list($articleArr, $tagsArr, $resultCount) = Article::getArticleListByTag($id, $pageNum = 1, $checkAuth);
-       include_once ROOT . '/views/indexByTag.php';
+        list($articleArr, $tagsArr, $resultCount) = Article::getArticleListByTag($id, $pageNum = 1, $checkAuth);
+        include_once ROOT . '/views/indexByTag.php';
     }
 
 }

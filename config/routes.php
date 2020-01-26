@@ -13,5 +13,4 @@ return array(
     "login" => "auth/login",
     "register" => "auth/registration",
     "myprofile" => "Profile/Profile"
-    
 );

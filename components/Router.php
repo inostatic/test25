@@ -16,16 +16,16 @@ class Router {
             return trim($_SERVER['REQUEST_URI'], '/');
         }
     }
-    
+
     private function checkAuth() {
         if (!isset($_SESSION['session_username'])) {
-                       $auth['enterned'] = 'form/formLogin.php';
-                       $auth['comment'] = 'form/noComment.php';
-                    } else {
-                        $auth['enterned'] = 'form/formEntered.php';
-                        $auth['comment'] = 'form/formComment.php';
-                    }
-                    return $auth;
+            $auth['enterned'] = 'form/formLogin.php';
+            $auth['comment'] = 'form/noComment.php';
+        } else {
+            $auth['enterned'] = 'form/formEntered.php';
+            $auth['comment'] = 'form/formComment.php';
+        }
+        return $auth;
     }
 
     public function run() {
@@ -53,7 +53,7 @@ class Router {
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
                 //если такой файл такому пути существует
                 //подключаем его
-                
+
                 if (file_exists($controllerFile)) {
                     include_once $controllerFile;
                 }

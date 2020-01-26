@@ -44,8 +44,6 @@ class Db {
         }
         return $result;
     }
-    
-
 
     public static function insert_into($query) {
         $db = self::getConnection();
