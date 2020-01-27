@@ -152,6 +152,7 @@ p {
     color: black;
     border-radius: 10px;
     border-color:  #173d9d;
+    clear: both;
 }
 .date{
     float: right;
@@ -182,6 +183,7 @@ p {
     color: black;
     border-radius: 10px;
     border-color: #173d9d;
+    clear: both;
 }
 .aPag {
     font-family: cursive;
@@ -343,8 +345,6 @@ tr:nth-child(even) {
     font-weight: bold;
     font-family: COMIC SANS MS;
 }
-
-
 
 
 

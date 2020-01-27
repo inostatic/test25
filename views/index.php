@@ -26,6 +26,12 @@ require_once "$checkAuth[enterned]";
 
 
         </div>
+         <div id ="leftside">
+                <p class="p"></p>
+            </div>
+            <div id ="rightside">
+                <p class="p"></p>
+            </div>
     <?php endforeach; ?>
 </article>
 <?php require_once 'form/footer.php'; ?>
