@@ -93,6 +93,7 @@ class Article {
         foreach ($articleArr as $articleList) {
             $tagArr[] = self::getArticleTag($articleList, $flag = false);
         }
+        $articleArr = array_reverse($articleArr);
         $count = count($articleArr);
         $resultCount = ceil($count / $notesOnPage);
         return [$articleArr, $tagArr, $resultCount];
