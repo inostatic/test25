@@ -2,7 +2,7 @@
 
 class Redactor {
 
-    public static function addArticle($params, $tags, $checkAuth) {
+    public static function addArticle($params, $tags) {
 
         $article = Db::insert_into("INSERT INTO `article` (title, content, author_id, author_name, short_content)"
                         . " VALUES ('$params[title]', '$params[content]', '$params[author_id]', '$params[author_name]', '$params[short_content]')");
@@ -16,7 +16,7 @@ class Redactor {
         return $result;
     }
 
-    public static function changeArticle($id, $checkAuth) {
+    public static function changeArticle($id) {
         $URL = URL;
         $tagList = "<span id='tags'>";
         $article = Db::get_result("SELECT title, content FROM article WHERE id = '$id'");

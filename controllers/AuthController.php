@@ -2,7 +2,7 @@
 
 class AuthController {
 
-    public static function methodRegistration($checkAuth) {
+    public static function methodRegistration() {
         include_once ROOT . '/models/Registration.php';
         $arrRegist = [];
         if (isset($_POST['register'])) {
@@ -15,9 +15,9 @@ class AuthController {
 
                 $row = Registration::checkUser($arrRegist);
                 if ($row == NULL) {
-                    $result = Registration::regist($arrRegist, $checkAuth);
+                    $result = Registration::regist($arrRegist);
                     if ($result) {
-                        self::auth($arrRegist['username'], $arrRegist['password'], $checkAuth);
+                        self::auth($arrRegist['username'], $arrRegist['password']);
                     }
                 }
             }
@@ -30,20 +30,20 @@ class AuthController {
         include_once ROOT . '/views/Register.php';
     }
 
-    public static function methodLogin($checkAuth) {
+    public static function methodLogin() {
 
         if (isset($_POST["submit"])) {
             if (!empty($_POST['username']) and ! empty($_POST['password'])) {
                 $username = htmlspecialchars($_POST['username']);
                 $password = htmlspecialchars($_POST['password']);
-                self::auth($username, $password, $checkAuth);
+                self::auth($username, $password);
             }
         }
     }
 
-    private static function auth($username, $password, $checkAuth) {
+    private static function auth($username, $password) {
         include_once ROOT . '/models/login.php';
-        $row = Login::cheackLogin($username, $password, $checkAuth);
+        $row = Login::cheackLogin($username, $password);
         if ($row != NULL) {
             $_SESSION['session_username'] = $row;
             header("Location: " . URL);

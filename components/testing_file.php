@@ -1,0 +1,2 @@
+<span class="date"><a href="<?= URL; ?>"><span>0 </span><img width="20"  src="../template/images/heart.png"></a></span>
+ <span class="like">0 </span><span class="date"><a href="<?= URL; ?>"><img width="20"  src="../template/images/heart.png"></a></span>

@@ -162,6 +162,10 @@ p {
     font-weight: bold;
     font-size: 11pt;
 }
+.like {
+    float: right;
+    /*text-align: right;*/
+}
 .name{
     font-size: 14pt;
     color: red;

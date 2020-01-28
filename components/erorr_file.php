@@ -1,9 +1,7 @@
-<?php
+<a style="font-size: 20px;" href="<?=$_SERVER['HTTP_REFERER'];?>">Вернуться назад</a>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-echo "<h1><b>ОШИБКА: Неверный логин или пароль!</b></h1>";
+
+<h1><b>ОШИБКА: Неверный логин или пароль!</b></h1>
+<h1><b>ОШИБКА: Неверный логин или пароль!</b></h1>
+<h1><b>ОШИБКА: Неверный логин или пароль!</b></h1>

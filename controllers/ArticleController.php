@@ -4,7 +4,7 @@ include_once ROOT . '/models/Article.php';
 
 class ArticleController {
 
-    public function methodSingle($id, $checkAuth) {
+    public function methodSingle($id) {
         $userSetting['id'] = $id;
         if (isset($_SESSION['session_username'])) {
             if (isset($_POST['submit'])) {
@@ -18,7 +18,7 @@ class ArticleController {
                 }
             }
         }
-        $articleArrResult = Article::getArticleItemById($userSetting, $checkAuth);
+        $articleArrResult = Article::getArticleItemById($userSetting);
         $articleItem = $articleArrResult[0];
 
         $tagList = Article::getArticleTag($articleItem, $flag = true);
@@ -31,14 +31,14 @@ class ArticleController {
         include_once ROOT . '/views/Single.php';
     }
 
-    public function methodIndex($pageNum = 1, $checkAuth) {
-        list($articleList, $resultCount, $checkAuth) = Article::getArticleList($pageNum, $checkAuth);
+    public function methodIndex($pageNum = 1) {
+        list($articleList, $resultCount) = Article::getArticleList($pageNum);
         $tagList = Article::getArticleTag($articleList, $flag = false);
         include_once ROOT . '/views/index.php';
     }
 
-    public static function methodBytag($id, $pageNum = 1, $checkAuth) {
-        list($articleArr, $tagsArr, $resultCount) = Article::getArticleListByTag($id, $pageNum = 1, $checkAuth);
+    public static function methodBytag($id, $pageNum = 1) {
+        list($articleArr, $tagsArr, $resultCount) = Article::getArticleListByTag($id, $pageNum = 1);
         include_once ROOT . '/views/indexByTag.php';
     }
 

@@ -2,15 +2,15 @@
 
 class RedactorController {
 
-    public function methodArticles($checkAuth) {
+    public function methodArticles() {
         self::authSession();
         include_once ROOT . '/models/Articles.php';
         $id = $_SESSION['session_username']['id'];
-        $articleList = Articles::getArticles($id, $checkAuth);
+        $articleList = Articles::getArticles($id);
         include_once ROOT . '/views/ArticlesTable.php';
     }
 
-    public function methodAdd($checkAuth) {
+    public function methodAdd() {
 
         self::authSession();
         include_once ROOT . '/models/Redactor.php';
@@ -23,7 +23,7 @@ class RedactorController {
                 $params['author_name'] = $_SESSION['session_username']['username'];
                 $params['short_content'] = mb_substr($params['content'], 0, 300, 'UTF-8');
                 $tags = self::checkTags();
-                Redactor::addArticle($params, $tags, $checkAuth);
+                Redactor::addArticle($params, $tags);
                 header('Location: ' . URL . '/myarticles');
             }
         }
@@ -41,7 +41,7 @@ class RedactorController {
         }
     }
 
-    public function methodDelete($id, $checkAuth) {
+    public function methodDelete($id) {
         self::authSession();
         include_once ROOT . '/models/Delete.php';
         if (Delete::deleteArticle($id)) {
@@ -49,7 +49,7 @@ class RedactorController {
         }
     }
 
-    public function methodChange($id, $checkAuth) {
+    public function methodChange($id) {
 
         self::authSession();
         $id *= 1;
@@ -68,7 +68,7 @@ class RedactorController {
                     }
                 }
             }
-            list($article, $tagList) = Redactor::changeArticle($id, $checkAuth);
+            list($article, $tagList) = Redactor::changeArticle($id);
 
             include_once ROOT . '/views/ChangeArticle.php';
         }

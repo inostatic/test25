@@ -6,7 +6,7 @@ class Change {
         return $result;
     }
 
-    public static function changeArticle($id, $checkAuth) {
+    public static function changeArticle($id) {
         $result = Db::get_result("SELECT title, content FROM article WHERE id = '$id'");
         return $result;
         

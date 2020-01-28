@@ -2,7 +2,7 @@
 
 class Article {
 
-    public static function getArticleItemById($userSetting, $checkAuth) {
+    public static function getArticleItemById($userSetting) {
         //Обрезаем если число не целое
         $id = intval($userSetting['id']);
         //Добавить новый комментарий в базу
@@ -22,7 +22,7 @@ class Article {
         return $articleArrResult = [$articleItem, $articleComments];
     }
 
-    public static function getArticleList($pageNum, $checkAuth) {
+    public static function getArticleList($pageNum) {
 
         list($notesOnPage, $shift) = self::pagination($pageNum);
         $articleList = Db::get_results('SELECT id, title, date, short_content, author_name '
@@ -36,7 +36,7 @@ class Article {
         $resultCount = ceil($count / $notesOnPage);
 
 
-        return [$articleList, $resultCount, $checkAuth];
+        return [$articleList, $resultCount];
     }
 
     public static function getArticleTag($articleList, $flag) {
@@ -71,7 +71,7 @@ class Article {
         return $tagList;
     }
 
-    public static function getArticleListByTag($id, $pageNum, $checkAuth) {
+    public static function getArticleListByTag($id, $pageNum) {
         list($notesOnPage, $shift) = self::pagination($pageNum);
         $result = Db::get_results("SELECT * FROM `routes` WHERE tag_id = $id");
 

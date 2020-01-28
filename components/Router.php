@@ -19,18 +19,17 @@ class Router {
 
     private function checkAuth() {
         if (!isset($_SESSION['session_username'])) {
-            $auth['enterned'] = 'form/formLogin.php';
-            $auth['comment'] = 'form/noComment.php';
+            define('AUTH', 'formLogin.php');
+            define('COM', 'form/noComment.php');
         } else {
-            $auth['enterned'] = 'form/formEntered.php';
-            $auth['comment'] = 'form/formComment.php';
+            define('AUTH', 'formEntered.php');
+            define('COM', 'form/formComment.php');
         }
-        return $auth;
     }
 
     public function run() {
         //Запуск функции проверка авторизации
-        $checkAuth = $this->checkAuth();
+        $this->checkAuth();
         //Получить строку запроса
         $uri = $this->getURI();
         //Проверить наличие такого запроса
@@ -48,18 +47,16 @@ class Router {
                 //Последний элемент массива(если он существует)
                 // является индексом нужной статьи
                 $params = $segments;
-                $params[] = $checkAuth;
+//                $params[] = $checkAuth;
                 //Узнаем путь к файлу с нужным контроллером
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
                 //если такой файл такому пути существует
                 //подключаем его
-
                 if (file_exists($controllerFile)) {
                     include_once $controllerFile;
                 }
                 //Создаем объект, вызываем метод
                 $controllerObject = new $controllerName;
-
                 $result = call_user_func_array(array($controllerObject, $methodName), $params);
                 if ($result != null) {
                     break;

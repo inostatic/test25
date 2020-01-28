@@ -14,7 +14,7 @@ class Profile {
     
     
     
-    public static function getMyProfile($params, $checkAuth) {
+    public static function getMyProfile($params) {
         $result = Db::get_result("SELECT full_name, email FROM user WHERE id = " . $params['id']);
         if ($result != NULL) {
             return $result;

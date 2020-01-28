@@ -2,7 +2,7 @@
 
 class ProfileController {
 
-    public function methodProfile($checkAuth) {
+    public function methodProfile() {
         include_once ROOT . '/models/Profile.php';
         if (isset($_SESSION['session_username'])) {
             $params['id'] = $_SESSION['session_username']['id'];
@@ -17,7 +17,7 @@ class ProfileController {
                 Profile::renameEmail($params);
             }
         }
-        $userProfile = Profile::getMyProfile($params, $checkAuth);
+        $userProfile = Profile::getMyProfile($params);
         include_once ROOT . '/views/ProfileView.php';
     }
 
