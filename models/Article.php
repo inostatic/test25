@@ -34,8 +34,6 @@ class Article {
         $count = Db::get_result("SELECT COUNT(*) FROM article");
         $count = $count['COUNT(*)'];
         $resultCount = ceil($count / $notesOnPage);
-
-
         return [$articleList, $resultCount];
     }
 
@@ -55,8 +53,6 @@ class Article {
             } else
                 return false;
         }
-
-
         foreach ($articleList as $elem) {
             $routes = Db::get_results("SELECT * FROM `routes` WHERE post_id = $elem[id]");
             if ($routes != NULL) {
@@ -74,7 +70,6 @@ class Article {
     public static function getArticleListByTag($id, $pageNum) {
         list($notesOnPage, $shift) = self::pagination($pageNum);
         $result = Db::get_results("SELECT * FROM `routes` WHERE tag_id = $id");
-
         $post_id = [];
         foreach ($result as $elem) {
             $post_id[] = $elem['post_id'];
@@ -106,7 +101,6 @@ class Article {
         } else {
             $page = 1;
         }
-
         $notesOnPage = 10;
         $shift = ($page - 1) * $notesOnPage;
         return [$notesOnPage, $shift];

@@ -22,11 +22,6 @@ class AuthController {
                 }
             }
         }
-
-
-
-
-
         include_once ROOT . '/views/Register.php';
     }
 
