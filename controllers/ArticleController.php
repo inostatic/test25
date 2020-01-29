@@ -20,14 +20,12 @@ class ArticleController {
         }
         $articleArrResult = Article::getArticleItemById($userSetting);
         $articleItem = $articleArrResult[0];
-
         $tagList = Article::getArticleTag($articleItem, $flag = true);
         if (isset($articleArrResult[1])) {
             $articleComments = $articleArrResult[1];
         } else {
             $articleComments = "";
         }
-
         include_once ROOT . '/views/Single.php';
     }
 
