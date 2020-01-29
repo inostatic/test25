@@ -27,7 +27,6 @@ class ArticleController {
         } else {
             $articleComments = "";
         }
-
         include_once ROOT . '/views/Single.php';
     }
 
@@ -41,5 +40,12 @@ class ArticleController {
         list($articleArr, $tagsArr, $resultCount) = Article::getArticleListByTag($id, $pageNum = 1);
         include_once ROOT . '/views/indexByTag.php';
     }
-
+    
+    public static function methodAddlike($id_article, $inf) {
+        include_once ROOT . '/models/Rating.php';
+        $id_user = USER_ID;
+        $header = Rating::get_like_info($id_user, $id_article, $inf);
+        header('Location: '.$header);
+        
+    }
 }

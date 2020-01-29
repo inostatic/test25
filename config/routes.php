@@ -3,6 +3,7 @@
 return array(
     "" => "article/index/1",
     "([0-9]+)" => "article/index/$1",
+    "addlike/([0-9]+)/([1-2])" => "article/addlike/$1/$2",
     "bytags/([0-9]+)" => "article/bytag/$1/1",
     "article/([0-9]+)" => "article/single/$1",
     "myarticles" => "redactor/articles",

@@ -24,6 +24,7 @@ class Router {
         } else {
             define('AUTH', 'formEntered.php');
             define('COM', 'form/formComment.php');
+            define("USER_ID", $_SESSION['session_username']['id']);
         }
     }
 

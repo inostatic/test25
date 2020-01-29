@@ -5,6 +5,7 @@
     <span class="name"><?= $articleItem['author_name']; ?></span>
     <span class="date"><?= $articleItem['date']; ?></span>
     <p><?= $articleItem['content']; ?></p><br>
+     <?= $articleItem['like'];?>
     <?php if ($tagList): foreach ($tagList as $tag): ?>
             <?= $tag ?>
         <?php endforeach; ?>
@@ -20,6 +21,7 @@
             <span class="name"><?= $articleComment['author_name']; ?></span>
             <span class="date"><?= $articleComment['date']; ?></span>
             <p><?= $articleComment['comment']; ?></p><br>
+            
         </div>
     <?php endforeach; ?>
 <?php else : ?>

@@ -16,6 +16,22 @@ class Article {
         }
         //получаем статью
         $articleItem = Db::get_result('SELECT*FROM article WHERE id=' . $id);
+        $url = URL;
+        if(defined('USER_ID')) {
+            $id_user = USER_ID;
+            $like = Db::get_result("SELECT * FROM `like_article` WHERE id_user = '$id_user' AND id_article = '$id'");
+//            var_dump($like);
+//            exit();
+            if($like != NULL) {
+                $articleItem['like'] = "<span class=\"like\"> 0 </span><span class=\"date\"><a href=\"$url/addlike/$id/1\"><img width=\"20\"  src=\"../template/images/1heart.png\"></a></span>";
+            } elseif($like == NULL) {
+                $articleItem['like'] = "<span class=\"like\"> 0 </span><span class=\"date\"><a href=\"$url/addlike/$id/2\"><img width=\"20\"  src=\"../template/images/2heart.png\"></a></span>";
+            }
+        } else {
+            $articleItem['like'] = "<span class=\"like\">0 </span><span class=\"date\"><img width=\"20\"  src=\"../template/images/2heart.png\"></span>";
+        }
+      
+        
         $articleComments = Db::get_results('SELECT*FROM comments WHERE article_id = ' . $id
                         . ' ORDER BY date DESC');
 
