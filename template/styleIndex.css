@@ -39,6 +39,7 @@ h3 {
 p {
     text-indent: 30px;
     font-family: Helvetica;
+    text-overflow: clip;
 }
 .p {
     font-family: COMIC SANS MS;
@@ -153,12 +154,13 @@ p {
     border-radius: 10px;
     border-color:  #173d9d;
     clear: both;
+    text-overflow: clip;
 }
 .date{
     float: right;
     text-align: right;
     color: red;
-    font-family: Verdana;
+    /*font-family: Verdana;*/
     font-weight: bold;
     font-size: 11pt;
 }
@@ -169,7 +171,7 @@ p {
 .name{
     font-size: 14pt;
     color: red;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .src{
     width: 100%;
@@ -188,6 +190,7 @@ p {
     border-radius: 10px;
     border-color: #173d9d;
     clear: both;
+    text-overflow: clip;
 }
 .aPag {
     font-family: cursive;
