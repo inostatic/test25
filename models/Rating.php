@@ -12,12 +12,12 @@ class Rating {
         return $_SERVER['HTTP_REFERER'];
     }
     private static function add_article_rating($id_article, $id_user) {
-        Db::insert_into("UPDATE `article` SET artilce_rating = article_rating + 1 WHERE id = '$id_article' ");
+       $row = Db::insert_into("UPDATE `article` SET `article_rating` = `article_rating` + 1 WHERE id = '$id_article'");
         Db::insert_into("INSERT INTO `like_article` SET id_user = '$id_user', id_article = '$id_article' ");
     }
 
     private static function dell_article_rating($id_article, $id_user) {
-        Db::insert_into("UPDATE `article` SET artilce_rating = article_rating - 1 WHERE id = '$id_article' ");
+        Db::insert_into("UPDATE `article` SET `article_rating` = `article_rating` - 1 WHERE id = '$id_article' ");
         Db::insert_into("DELETE FROM `like_article` WHERE id_user = '$id_user' AND id_article = '$id_article' ");
     }
     

@@ -20,15 +20,16 @@ class Article {
         if(defined('USER_ID')) {
             $id_user = USER_ID;
             $like = Db::get_result("SELECT * FROM `like_article` WHERE id_user = '$id_user' AND id_article = '$id'");
-//            var_dump($like);
-//            exit();
             if($like != NULL) {
-                $articleItem['like'] = "<span class=\"like\"> 0 </span><span class=\"date\"><a href=\"$url/addlike/$id/1\"><img width=\"20\"  src=\"../template/images/1heart.png\"></a></span>";
+                $articleItem['like'] = "<span class=\"like\"> $articleItem[article_rating] </span>"
+                        ."<span class=\"date\"><a href=\"$url/addlike/$id/1\"><img width=\"20\"  src=\"../template/images/1heart.png\"></a></span>";
             } elseif($like == NULL) {
-                $articleItem['like'] = "<span class=\"like\"> 0 </span><span class=\"date\"><a href=\"$url/addlike/$id/2\"><img width=\"20\"  src=\"../template/images/2heart.png\"></a></span>";
+                $articleItem['like'] = "<span class=\"like\"> $articleItem[article_rating] </span>"
+                        ."<span class=\"date\"><a href=\"$url/addlike/$id/2\"><img width=\"20\"  src=\"../template/images/2heart.png\"></a></span>";
             }
         } else {
-            $articleItem['like'] = "<span class=\"like\">0 </span><span class=\"date\"><img width=\"20\"  src=\"../template/images/2heart.png\"></span>";
+            $articleItem['like'] = "<span class=\"like\"> $articleItem[article_rating] </span>"
+                    ."<span class=\"date\"><a><img width=\"20\"  src=\"../template/images/2heart.png\"></a></span>";
         }
       
         
@@ -45,7 +46,20 @@ class Article {
                         . 'FROM article '
                         . 'ORDER BY date DESC '
                         . 'LIMIT ' . $shift . ', ' . $notesOnPage . '');
-
+        
+ 
+//            foreach ($articleList as $elem) {
+//            if (defined('USER_ID')) {
+//                $id_user = USER_ID;
+//                $like = Db::get_result("SELECT * FROM `like_article` WHERE id_user = '$id_user'");
+//                if ($like['id_article'] == $elem['id'])
+//                    $articleList[$elem]['like'] = "<span class=\"like\"> $articleItem[article_rating] </span>"
+//                            . "<span class=\"date\"><a href=\"$url/addlike/$id/1\"><img width=\"20\"  src=\"../template/images/1heart.png\"></a></span>";
+//            } else {
+//                $articleList[$elem]['like'] = "<span class=\"like\"> $articleItem[article_rating] </span>"
+//                        . "<span class=\"date\"><a href=\"$url/addlike/$id/2\"><img width=\"20\"  src=\"../template/images/2heart.png\"></a></span>";
+//            }
+//        }
 
         $count = Db::get_result("SELECT COUNT(*) FROM article");
         $count = $count['COUNT(*)'];

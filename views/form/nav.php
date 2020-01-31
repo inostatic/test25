@@ -4,7 +4,7 @@
         <meta charset="utf8">
         <title>blog</title>
         <meta http-equiv="Cache-Control" content="max-age=1, must-revalidate">
-        <link rel="stylesheet" href="../template/styleIndex.css?a=2322d332qwe22d522wwae1232212331211">
+        <link rel="stylesheet" href="../template/styleIndex.css?a=2322d33222qwe22d522wwae1232212331211">
     </head>
     <body>
         <nav id ="header">

@@ -166,6 +166,9 @@ p {
 }
 .like {
     float: right;
+    font-family: Arial;
+    font-weight: bold;
+    color: #4b0082;
     /*text-align: right;*/
 }
 .name{
