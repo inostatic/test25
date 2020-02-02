@@ -16,6 +16,7 @@
                 <?php endforeach; ?>
             <?php endif; ?>
         </span>
+        <?= $article['like']; ?>
     </div>
 <?php endforeach; ?>
 <?php require_once 'form/footer.php'; ?>
